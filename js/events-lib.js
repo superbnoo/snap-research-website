@@ -732,9 +732,23 @@ const eventsList = [
   {
     id: 134,
     date: "April 7, 2022",
-    eventName: "",
+    eventName: "ACM Conference On Computer-Supported Cooperative Work And Social Computing",
     eventShort: "CSCW 2022",
     url: "",
+  },
+  {
+    id: 135,
+    date: "October 4, 2021",
+    eventName: "2021 IEEE International Symposium on Mixed and Augmented Reality",
+    eventShort: "ISMAR 2021",
+    url: "https://ismar21.org/",
+  },
+  {
+    id: 136,
+    date: "June 13, 2022",
+    eventName: "Designing Interactive Systems Conference 2022",
+    eventShort: "DIS 2022",
+    url: "https://dis.acm.org/2022/",
   },
 
   // {
