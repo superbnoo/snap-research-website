@@ -108,21 +108,6 @@ const teamMembersList = [
     `,
   },
   {
-    id: 7,
-    metaTitle: "",
-    metaDescription: `
-    `,
-    name: "Yicheng Wu",
-    email: "",
-    subTitle: "Research Scientist",
-    researchAreas: "Computational Imaging",
-    backUrl: "../team/category/computational-imaging.html",
-    imageUrl: "../../img-for-members/Yicheng-Wu.webp",
-    description: `
-    <p>Yicheng is a Research Scientist working in the Computational Imaging team at Snap Research. His research focuses on computational photography and computer vision for applications such as image enhancement, 3D reconstruction, and AR/VR. He received his Ph.D. from Rice University in 2021. His research efforts have been published in venues such as CVPR, ICCV, ECCV, and ICCP. Learn more about his work <a href="https://yichengwu.github.io/"><u>here</u></a>. </p>
-    `,
-  },
-  {
     id: 100,
     metaTitle: "",
     metaDescription: `
@@ -136,19 +121,6 @@ const teamMembersList = [
     description: `
     <p>Colin is a Lead Research Engineer whose initial focus is to advance cloud infrastructure and build out new systems for Snap Research. His work allows Research Engineers and Scientists to train models, run experiments, and solicit feedback among other tasks. He joined Snap Inc. in 2017 as a member of the Developer Tools team, creating tools to improve code quality and manage build infrastructure. Previously, he worked for Ever.ai, a face recognition platform, where he set up the initial machine learning infrastructure for both training and inference. Colin received his Master’s degree in Software Engineering from McMaster University.&nbsp;</p>
     `,
-  },
-
-  {
-    id: 101,
-    metaTitle: "",
-    metaDescription: ``,
-    name: "Eunice Kim",
-    email: "",
-    subTitle: "Program Manager",
-    researchAreas: "Program Management Support",
-    backUrl: "../team/category/computational-social-science.html",
-    imageUrl: "../../img-for-members/eunice_kim.webp",
-    description: `<p>Eunice is a Program Manager at Snap Research that oversees all external collaborations, research related programs, and crossfunctional partnerships.</p>`,
   },
   {
     id: 102,
@@ -202,7 +174,6 @@ const teamMembersList = [
     id: 105,
     metaTitle: "",
     metaDescription: `
-    Neil Shah is a Lead Research Scientist at Snap Inc, with interests spanning data mining, machine learning and computational social science, specifically in the contexts of graph-based modeling of user behavior and misbehavior. His work has resulted in 45+ conference and journal publications, in top venues such as ICLR, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an organizer, chair and senior program committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.
     `,
     name: "Neil Shah",
     email: "",
@@ -211,7 +182,7 @@ const teamMembersList = [
     backUrl: "../team/category/computational-social-science.html",
     imageUrl: "../../img-for-members/Neil_Shah_1.webp",
     description: `
-    <p>Neil Shah is a Lead Research Scientist at Snap Inc, with interests spanning data mining, machine learning and computational social science, specifically in the contexts of graph-based modeling of user behavior and misbehavior. His work has resulted in 45+ conference and journal publications, in top venues such as ICLR, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an organizer, chair and senior program committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.</p>
+    <p>Neil is a Lead Research Scientist and Manager at Snap Research, working on machine learning algorithms and applications on large-scale graph data.  His work has resulted in 50+ conference and journal publications, in top venues such as ICLR, NeurIPS, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an organizer, chair and senior program committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.</p>
     `,
   },
   {
@@ -242,22 +213,6 @@ const teamMembersList = [
     imageUrl: "../../img-for-members/Shubham-Vij.webp",
     description: `
     <p>Shubham is a Senior Research Engineer whose focus is around engineering Artificial Intelligence / Machine Learning systems to realize products out of Snap’s research. Through his contributions at the lab he has helped build solutions to train large scale graph neural networks, de-duplicate news, develop content creation tools used by publishers and advertisers, optimize cost and workflow management for training neural networks, and detecting trends.<br>Shubham holds a Bachelor’s degree in Computer Science from the University of Waterloo, and a Bachelor’s degree in Business Administration at Wilfrid Laurier University.</p>
-    `,
-  },
-  {
-    id: 108,
-    metaTitle: "",
-    metaDescription: `
-    .
-    `,
-    name: "Vitor Sousa",
-    email: "",
-    subTitle: "Research Engineer",
-    researchAreas: "Large-scale Data Engineering and Machine Learning",
-    backUrl: "../team/category/computational-social-science.html",
-    imageUrl: "../../img-for-members/Vitor-Sousa.webp",
-    description: `
-    <p>Vítor is a Research Engineer at Snap Research. His research is focused on Large Scale Data Engineering using Provenance, specifically in providing systems for managing several heterogeneous data sources and performing data transformations to gather insights from them. It routinely requires machine learning techniques. Before joining Snap Inc., Vítor worked for Dell EMC, Intel, and TV Globo, and received his Master's and Doctorate's degrees in Systems and Computer Engineering from Federal University of Rio de Janeiro.</p>
     `,
   },
   {
@@ -533,20 +488,6 @@ const teamMembersList = [
     <p>Sergey Tulyakov is a Principal Research Scientist heading the Creative Vision team at Snap Research. His work focuses on creating methods for manipulating the world via computer vision and machine learning. This includes style transfer, photorealistic object manipulation and animation, video synthesis, prediction and retargeting. His work has been published as 20+ top conference papers, journals and patents resulting in multiple tech transfers, including Snapchat Pet Tracking, OurBaby Snappable and Real-time Neural Lenses (gender swap, baby face) and others. Before joining Snap Inc., Sergey was with Carnegie Mellon University, Microsoft, NVIDIA. He holds a PhD degree from the University of Trento, Italy.</p>
     `,
   },
-  {
-    id: 400,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Nikki Lowry",
-    email: "",
-    subTitle: "Executive Assistant",
-    backUrl: "../team/category/all.html",
-    imageUrl: "../../img-for-members/nikki-lowry.webp",
-    description: `
-    <p>Nikki is the Executive Assistant to Co-founder and CTO, Bobby Murphy. She manages processes for Snap Research, Research Interns and the Fellowship Program. In addition to Snap Research, she oversees projects for Snap's Lens Design, Camera Platform, Machine Learning and Cameos Departments. Nikki studied Political Science at Indiana University and before Snap she was the EA to the VP of Policy and Communications at Uber. </p>
-    `,
-  },
 ];
 
 const emailForContact = "someemail@snap.com";
@@ -558,8 +499,8 @@ teamMembersList.forEach((teamMember) => {
 });
 
 const teamMembersForTeamCategory = {
-  computationalImaging: [0, 1, 2, 3, 4, 5, 6, 7],
-  computationalSocialScience: [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111],
+  computationalImaging: [0, 1, 2, 3, 4, 5, 6],
+  computationalSocialScience: [100, 102, 103, 104, 105, 106, 107, 109, 110, 111],
   humanComputerInteraction: [200, 201, 202, 203, 204, 205, 206, 207, 208],
   creativeVision: [300, 301, 302, 303, 304, 305, 306],
   admin: [],

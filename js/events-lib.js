@@ -757,6 +757,34 @@ const eventsList = [
     eventShort: "AHs 2022",
     url: "https://dl.acm.org/doi/proceedings/10.1145/3519391",
   },
+  {
+     id: 138,
+     date: "October 17, 2022",
+     eventName: "31st ACM International Conference on Information and Knowledge Management",
+     eventShort: "CIKM 2022",
+     url: "https://www.cikm2022.org/",
+  },
+  {
+    id: 139,
+    date: "June 5, 2023",
+    eventName: "17th International Conference on Web and Social Media",
+    eventShort: "ICWSM 2023",
+    url: "https://www.icwsm.org/2023/",
+  },
+  {
+    id: 140,
+    date: "July 17, 2022",
+    eventName: "1st Workshop on Pre-training at the 39th International Conference on Machine Learning",
+    eventShort: "ICML 2022 (Workshop on Pre-Training)",
+    url: "https://icml.cc/virtual/2022/workshop/13457",
+  },
+  {
+    id: 141,
+    date: "November 28, 2022",
+    eventName: "36th Conference on Neural Information Processing Systems",
+    eventShort: "NeurIPS 2022",
+    url: "https://nips.cc/Conferences/2022",
+  },
 
   // {
   //   id: 105,
