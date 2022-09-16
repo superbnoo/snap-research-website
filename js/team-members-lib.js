@@ -262,128 +262,6 @@ const teamMembersList = [
     `,
   },
   {
-    id: 201,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Andrés Monroy-Hernández",
-    email: "",
-    subTitle: "Principal Research Scientist",
-    researchAreas: "Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/Andres.webp",
-    description: `
-    <p>Andrés manages the <b>Human-computer Interaction</b> research team distributed across Seattle, NYC and LA. His core area of research is <b>social computing</b> <b>systems</b>. Along with with his team, he designs and studies technologies that help people connect and collaborate in new ways. In recent years, his team and him have created <b>smartwatch</b> applications that use biosignals to support remote social presence, and <b>augmented reality</b> experiences that bring co-located friends closer together through play and creative expression.</p><p>Before Snap, he led the development of Microsoft's first human-in-the-loop virtual assistant, studied social media use during war and political uprisings, and created the Scratch online community at MIT. <a href="http://scratch.mit.edu/"><u></u></a>His work has been published in and has received best-paper awards from <i>CHI</i>, <i>CSCW</i>, <i>HCOMP</i>, and <i>ICWSM</i>. He was also named one of the MIT Technology Review’s 35-under-35 Innovators, and one of CNET's Influential Latinos in Tech. His research has been featured in the<a href="http://www.nytimes.com/2011/09/25/world/americas/mexico-turns-to-twitter-and-facebook-for-information-and-survival.html">&nbsp;</a>The New York Times,&nbsp;CNN,&nbsp;Wired,&nbsp;NPR,&nbsp;BBC, and&nbsp;others. He was also the program co-chair for <i>ACM CSCW '18</i>, <i>ACM CI '19</i>, and is an editor for <i>CSCW</i>. </p><p>Andrés earned a PhD from the MIT Media Lab and BS from Tec de Monterrey in México. </p><p><u><a href="https://www.andresmh.com/">Learn more</a></u>.</p>
-    `,
-  },
-  {
-    id: 202,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Ava Robinson",
-    email: "",
-    subTitle: "Research Engineer",
-    researchAreas: "Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/Ava-Robinson.webp",
-    description: `
-    <p>Ava Robinson is a Research Engineer at Snap Research in New York. As part of the Human-Computer Interaction team, Ava works on designing and developing technologies to explore new user experiences that foster social presence. Previously, she worked at Snap Inc. as a Research Intern and earned her BS in Computer Science from Northwestern University.</p>
-    `,
-  },
-  {
-    id: 203,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Brian A. Smith",
-    email: "",
-    subTitle: "Research Scientist",
-    researchAreas: "Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/Brian_Smith_1.webp",
-    description: `
-    <p>Brian A. Smith is a Research Scientist specializing in Human–Computer Interaction (HCI) and an Assistant Professor of Computer Science at Columbia University, where he directs the Computer-Enabled Abilities Laboratory (CEAL). His research goal is to develop computers that can grant people new abilities, abilities that help people better experience the world. His work is interdisciplinary and incorporates AI, sensing, vision, game design, augmented reality, accessibility, and social computing.</p><p>
-    Brian received his Ph.D. in Computer Science from Columbia University. Prior to joining Snap Research, he worked at Google Research and several small game development studios. His website is&nbsp;<a href="http://www.cs.columbia.edu/~brian/"><u>here</u></a>.</p>
-    `,
-  },
-  {
-    id: 204,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Fannie Liu",
-    email: "",
-    subTitle: "Research Scientist",
-    researchAreas: "Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/fannie_liu__1_.webp",
-    description: `
-    <p>Fannie Liu is a Research Scientist at Snap Research New York. </p><p>As part of the Human-Computer Interaction team, Fannie works on designing and studying technologies that facilitate social connection between people. Her research areas include HCI, social computing, and physiological sensing. Fannie received her Ph.D. in Human-Computer Interaction from Carnegie Mellon University. </p><p>Previously, she worked at Snap Inc. as a Research Intern and at LinkedIn as a Software Engineer. Learn more about her work&nbsp;<u><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__www.fannieliu.com_&amp;d=DwMFaQ&amp;c=ncDTmphkJTvjIDPh0hpF_w&amp;r=Nav94UJVUwj18cAntjQVYe5_Vp_PJnYusTYm3HiD8v0&amp;m=WW7EqA55WK91LKvqRFKgctEKf_o0B773Yli6xOhkx0g&amp;s=2ypThzF4U6yGlG5CamaBRK09Dj4rCyg3Oz0m4Ye1M9c&amp;e=">here</a></u>.</p>
-    `,
-  },
-  {
-    id: 205,
-    metaTitle: "",
-    metaDescription: `
-    Jack is a Research Engineer on Snap Research's Seattle team. His works are focused on user experience, and prototyping and exploring potential new features to be incorporated with the product. Before joining Snap, Jack worked at Stitchbridge, Oculus Research (now as Facebook Reality Lab), and Next Animation Studio for Research and Development of AR/VR, Computer Graphics, Gaming and Animation field in the United States and Taiwan. His works include conducting computer graphic research, developing in-house software, integrating research and improving the production pipeline. He received his Master’s degrees in Computer Science from National Taiwan University in 2008 and in Entertainment Technology from Carnegie Mellon University in 2016.
-    `,
-    name: "Jack (Tsung-Yu) Tsai",
-    email: "",
-    subTitle: "Research Engineer",
-    researchAreas: "Computer Graphics, Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/Jack.webp",
-    description: `
-    <p>Jack is a Research Engineer on Snap Research's Seattle team. His works are focused on user experience, and prototyping and exploring potential new features to be incorporated with the product. Before joining Snap, Jack worked at Stitchbridge, Oculus Research (now as Facebook Reality Lab), and Next Animation Studio for Research and Development of AR/VR, Computer Graphics, Gaming and Animation field in the United States and Taiwan. His works include conducting computer graphic research, developing in-house software, integrating research and improving the production pipeline. He received his Master’s degrees in Computer Science from National Taiwan University in 2008 and in Entertainment Technology from Carnegie Mellon University in 2016.</p>
-    `,
-  },
-  {
-    id: 206,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Rajan Vaish",
-    email: "",
-    subTitle: "Senior Research Scientist",
-    researchAreas: "Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/Rajan_Vaish.webp",
-    description: `
-    <p>Rajan Vaish is a Senior Research Scientist at Snap Research. His current interest in human-computer interaction (HCI) spans designing novel augmented reality experiences and conducting social computing research. Before joining Snap Inc., Rajan was a Postdoctoral Research Fellow in the School of Engineering at Stanford University, where he developed crowdsourcing systems for scaling open-ended complex goals. He has worked and collaborated with various groups at Microsoft Research Redmond and India, Palo Alto Research Center, Los Alamos National Lab, IBM T.J. Watson Research Center, Accenture Technology Labs, Google SoC, OpenStreetMap, and One Laptop per Child. Rajan earned a MS and a PhD in Computer Science from UC Santa Cruz, and received the University of California Regents Fellowship. In addition to top academic conferences, Rajan's research has been featured in the MIT Tech Review, New Scientist, Stanford News, and Wired, among others. Learn more about his work at <a href="http://cs.stanford.edu/~rvaish"><u>http://cs.stanford.edu/~rvaish</u></a>.</p>
-    `,
-  },
-  {
-    id: 207,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Sven Kratz",
-    email: "",
-    subTitle: "Senior Research Engineer",
-    researchAreas: "",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/sven_profile.webp",
-    description: `
-    <p>Sven is a Senior Research Engineer with the Human Computer Interaction (HCI) group of Snap Research. Sven’s previous work in academia and industry includes gestural and spatial user interfaces for mobile devices, immersive telepresence robotics, advanced driver monitoring systems and HMI for operators and engineers of autonomous vehicles. Prior to joining Snap Inc.Sven worked as a Senior UX Engineer at Kodiak Robotics, Senior Principal Engineer at Harman International and Research Scientist at Fuji-Xerox Palo Alto Laboratory. Sven received his Ph.D. in Computer Science from the University of Munich, Germany.</p>
-    `,
-  },
-  {
-    id: 208,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Yu Jiang Tham",
-    email: "",
-    subTitle: "Senior Research Engineer",
-    researchAreas: "Human Computer Interaction",
-    backUrl: "../team/category/human-computer-interaction.html",
-    imageUrl: "../../img-for-members/YuJiang.webp",
-    description: `
-    <p>Yu Jiang is a Senior Research Engineer on the Human Computer Interaction group. Before joining Snap Research, he was part of the Spectacles team working on firmware development and prototyping for Spectacles V1, V2, and V3. Prior to joining Snap, he  worked on various projects at Apple in robotics, automated testing, and development.&nbsp;</p>
-    `,
-  },
-  {
     id: 300,
     metaTitle: "",
     metaDescription: `
@@ -501,7 +379,6 @@ teamMembersList.forEach((teamMember) => {
 const teamMembersForTeamCategory = {
   computationalImaging: [0, 1, 2, 3, 4, 5, 6],
   computationalSocialScience: [100, 102, 103, 104, 105, 106, 107, 109, 110, 111],
-  humanComputerInteraction: [200, 201, 202, 203, 204, 205, 206, 207, 208],
   creativeVision: [300, 301, 302, 303, 304, 305, 306],
   admin: [],
 
@@ -509,7 +386,6 @@ const teamMembersForTeamCategory = {
     return [
       ...this.computationalImaging,
       ...this.computationalSocialScience,
-      ...this.humanComputerInteraction,
       ...this.creativeVision,
       ...this.admin,
     ];

@@ -3,9 +3,8 @@ const { pathname } = window.location;
 const setScrollLeft = {
   "computational-imaging": 0,
   "computational-social-science": 215,
-  "human-computer-interaction": 480,
-  "creative-vision": 650,
-  all: 650,
+  "creative-vision": 480,
+  all: 480,
   default: 0,
 };
 const categoryesTeam = Object.keys(setScrollLeft);

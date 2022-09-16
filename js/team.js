@@ -5,7 +5,6 @@ $(function () {
   const teamsCategory = {
     "computational-imaging": "computationalImaging",
     "computational-social-science": "computationalSocialScience",
-    "human-computer-interaction": "humanComputerInteraction",
     "creative-vision": "creativeVision",
     all: "all",
   };
