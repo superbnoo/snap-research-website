@@ -52,7 +52,7 @@ const teamMembersList = [
     name: "Jian (James) Wang",
     email: "",
     subTitle: "Senior Research Scientist",
-    researchAreas: "Computational Imaging",
+    researchAreas: "Computational Imaging, Computational Photography, Computer Vision",
     backUrl: "../team/category/computational-imaging.html",
     imageUrl: "../../img-for-members/JianWangNew.webp",
     description: `
