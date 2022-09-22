@@ -56,8 +56,7 @@ const teamMembersList = [
     backUrl: "../team/category/computational-imaging.html",
     imageUrl: "../../img-for-members/JianWangNew.webp",
     description: `
-    <p>Jian (James) Wang works in the Computational Imaging lab at Snap Research New York. Jian received his PhD in Computation Imaging and Computer Vision from Carnegie Mellon University in 2018. His research interests lie in computer vision and computational photography. His previous work involves the design of novel camera systems
-    (algorithms, optics and mechanics) for 3D acquisition, imaging beyond visible light, and seeing through scattering media. Learn more about his work <a
+    <p>Jian (James) Wang works in the Computational Imaging lab at Snap Research New York. Jian received his PhD from Carnegie Mellon University in 2018. He is mainly interested in Computational Imaging (e.g., novel sensors/wearables/displays for AR/VR/HCI, physics-based vision, passive/active 3d sensing, creative consumer imaging devices), Computational Photography (e.g., cool effects, image/video restoration/enhancement, image matting and compositing, image and video editing and generation, novel view synthesis) and Computer Vision. Learn more about his work <a
     href="http://www.andrew.cmu.edu/user/jianwan2/"><u></u></a><u></u><a
     href="https://jianwang-cmu.github.io/"><u>here</u></a>.</p>
     `,
