@@ -99,7 +99,7 @@ const teamMembersList = [
     name: "Sizhuo Ma",
     email: "",
     subTitle: "Research Scientist, Computational Imaging",
-    researchAreas: "Computational Imaging",
+    researchAreas: "Computational Imaging, Computational Photography, Computer Vision",
     backUrl: "../team/category/computational-imaging.html",
     imageUrl: "../../img-for-members/Sizhuo_Ma.webp",
     description: `
