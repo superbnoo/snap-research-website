@@ -85,12 +85,36 @@
   <script src="../../js/handle-scroll-left.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
+  <!-- <script>
     window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
   </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script> -->
 
+  <script type="text/javascript"> 
+    (function() {
+      // Import script
+      const modalScript = document.createElement('script');
+      modalScript.async = true;
+      modalScript.type = 'text/javascript';
+      modalScript.src = 'https://storage.googleapis.com/snap-marketing-web-component/StandaloneCookieModal.js';
+
+      document.head.append(modalScript);
+      // Run script
+      modalScript.onload = () => {
+        const modalContainer = document.createElement('div');
+        modalContainer.id = 'cookie-modal-container';
+        document.body.appendChild(modalContainer);
+        snapMarketingWeb.cookieModal({
+          // placeholder for component props
+          GAID: "",
+          GTMID: "",
+          backgroundType: 'White'
+        }, modalContainer);
+      }; 
+    })();
+  </script>
+  
   <script type="text/javascript">
     $(function () {
       const headerRoutes = {
