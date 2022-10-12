@@ -131,10 +131,10 @@ const teamMembersList = [
     subTitle: "Senior Research Scientist",
     researchAreas: "Computational Social Science, Natural Language Processing",
     backUrl: "../team/category/computational-social-science.html",
-    imageUrl: "../../img-for-members/5d885a89-a2fd-42cd-98e8-b16eebc603f3__1_.webp",
+    imageUrl: "../../img-for-members/barbieri.webp",
     description: `
-    <p>Francesco is a Senior Research Scientist at Snap Research, whose research is focused on Natural Language Processing. He has been working on understanding social media communications, visual and music domain. He is looking to further his research in multimodality. His work was published in top conferences such as EMNLP, NAACL, EACL, ACMMM, and IJCAI. </p><p>
-    Francesco received his Ph.D. in Computer Science from Pompeu Fabra University in Barcelona, where he also completed his post-doc, with a thesis on machine learning algorithms for irony and emojis. Prior to joining Snap Research, he was a research scientist at Alpha Telefonica, working on machine learning algorithms for mental health. More on his work can be found <u><a href="https://scholar.google.es/citations?hl=en&amp;user=1wPUUvcAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">here</a></u>.
+    <p>Francesco is a Senior Research Scientist at Snap Research, whose research is focused on Natural Language Processing. He has been working on understanding social media communications, visual and music domain. He is looking to further his research in multimodality. His work was published in top conferences such as ACL, EMNLP, NAACL, EACL, COLING, and CVPR. </p><p>
+    Francesco received his Ph.D. in Computer Science from Pompeu Fabra University in Barcelona, where he also completed his post-doc, with a thesis on machine learning algorithms for irony and emojis. Prior to joining Snap Research, he was a research scientist at Telefonica, working on machine learning algorithms for mental health. More on his work can be found <u><a href="https://scholar.google.com/citations?user=B10uzI4AAAAJ&hl=en&oi=ao">here</a></u>.
     </p>
     `,
   },
