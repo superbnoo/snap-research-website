@@ -36,12 +36,12 @@ const teamMembersList = [
         `,
     name: "Guru Krishnan",
     email: "",
-    subTitle: "Lead Research Engineer",
-    researchAreas: "Computational Imaging",
+    subTitle: "Manager, Lead Research Engineer",
+    researchAreas: "Computational Imaging/Sensing, Computational Displays, Wearables, Computer Vision",
     backUrl: "../team/category/computational-imaging.html",
     imageUrl: "../../img-for-members/GuruK2019.webp",
     description: `
-    <p><p>Guru is a Lead Research Engineer at Snap Research Seattle, who focuses on computational imaging, photography, computer vision, machine learning, robotics, and computer graphics. Before joining Snap Inc., Guru worked at Amazon, where he helped automate fulfillment and deliver multiple perception systems for robotics technologies. Guru earned a Master’s in Computer Science from Columbia University. <p>Learn more about his work&nbsp;<a href="http://www.gurukrishnan.com/"><u>here</u></a>.
+    <p><p>Guru leads the Computational Imaging team. He focuses on computational imaging, photography, computer vision, and novel sensing and display paradigms. Before joining Snap Inc., Guru worked at Amazon, where he helped automate fulfillment and deliver multiple perception systems for robotics technologies. Guru earned a Master’s in Computer Science from Columbia University. <p>Learn more about his work&nbsp;<a href="http://www.gurukrishnan.com/"><u>here</u></a>.
     `,
   },
   {
