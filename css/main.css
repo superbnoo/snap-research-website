@@ -2183,3 +2183,33 @@ textarea {
   margin-left: 0
 }
 
+.fellowship--group-title {
+  letter-spacing: 0.01rem;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 0;
+  max-width: calc(100% - 48px);
+}
+
+.fellowship--group-title,
+.fellowship--group-title a {
+  -webkit-transition: 0.25s ease;
+  -moz-transition: 0.25s ease;
+  -ms-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
+  transition: 0.25s ease;
+}
+
+.fellowship--group-title a {
+  border-bottom: 2px solid transparent;
+  font-weight: 500;
+}
+
+.fellowship--group-title span {
+  font-weight: 500;
+}
+
+.fellowship--group-title a:hover {
+  border-color: rgba(0, 0, 0, 0.75);
+}
+
