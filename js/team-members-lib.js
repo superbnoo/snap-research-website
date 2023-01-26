@@ -113,7 +113,7 @@ const teamMembersList = [
         `,
     name: "Colin Eles",
     email: "",
-    subTitle: "Lead Research Engineer",
+    subTitle: "Lead Research Engineer, Manager",
     researchAreas: "Computational Social Science",
     backUrl: "../team/category/computational-social-science.html",
     imageUrl: "../../img-for-members/Colin_Eles_1.webp",
@@ -139,29 +139,13 @@ const teamMembersList = [
     `,
   },
   {
-    id: 103,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Leonardo Neves",
-    email: "",
-    subTitle: "Principal Research Scientist",
-    researchAreas:
-      "Computational Social Science, Natural Language Processing, Data Mining",
-    backUrl: "../team/category/computational-social-science.html",
-    imageUrl: "../../img-for-members/Leonardo_Neves_1.webp",
-    description: `
-    <p>Leonardo is a Principal Research Scientist and manages the Computational Social Science team at Snap Research. His research is focused on Natural Language Processing and Data Mining, specifically in learning additional context to improve language understanding. </p><p>Leonardo’s recent works involve combining contextual variables like weather, location, and time with text to improve behavior understanding, &nbsp; and studying language evolution and its challenges in social platforms. </p><p>Before joining Snap Inc., Leonardo worked for Pivotal Software Inc., Intel, and Yelp, and earned a Master’s in Intelligent Information Systems from Carnegie Mellon University.</p>
-    `,
-  },
-  {
     id: 104,
     metaTitle: "",
     metaDescription: `
     `,
     name: "Maarten Bos",
     email: "",
-    subTitle: "Lead Research Scientist",
+    subTitle: "Lead Research Scientist, Manager",
     researchAreas: "Computational Social Science",
     backUrl: "../team/category/computational-social-science.html",
     imageUrl: "../../img-for-members/Maarten_Bos_1.webp",
@@ -176,12 +160,12 @@ const teamMembersList = [
     `,
     name: "Neil Shah",
     email: "",
-    subTitle: "Lead Research Scientist",
+    subTitle: "Lead Research Scientist, Manager",
     researchAreas: "Graph Machine Learning, Data Mining, Computational Social Science",
     backUrl: "../team/category/computational-social-science.html",
     imageUrl: "../../img-for-members/Neil_Shah_1.webp",
     description: `
-    <p>Neil is a Lead Research Scientist and Manager at Snap Research, working on machine learning algorithms and applications on large-scale graph data.  His work has resulted in 50+ conference and journal publications, in top venues such as ICLR, NeurIPS, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an organizer, chair and senior program committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.</p>
+    <p>Neil is a Lead Research Scientist and Manager of the Computational Social Science team at Snap Research.  His work focuses on machine learning algorithms and applications on large-scale graph data, especially towards algorithms and applications for modeling online human behavior.  His work has resulted in 50+ conference and journal publications, in top venues such as ICLR, NeurIPS, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an organizer, chair and senior program committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.</p>
     `,
   },
   {
@@ -377,7 +361,7 @@ teamMembersList.forEach((teamMember) => {
 
 const teamMembersForTeamCategory = {
   computationalImaging: [0, 1, 2, 3, 4, 5, 6],
-  computationalSocialScience: [100, 102, 103, 104, 105, 106, 107, 109, 110, 111],
+  computationalSocialScience: [100, 102, 104, 105, 106, 107, 109, 110, 111],
   creativeVision: [300, 301, 302, 303, 304, 305, 306],
   admin: [],
 
