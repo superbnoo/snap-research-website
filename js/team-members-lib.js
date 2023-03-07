@@ -299,7 +299,7 @@ const teamMembersList = [
     subTitle: "Senior Research Scientist",
     researchAreas: "Computer Vision, Creative Vision",
     backUrl: "../team/category/creative-vision.html",
-    imageUrl: "../../img-for-members/IMG-8053.webp",
+    imageUrl: "../../img-for-members/kyle-olszewski.webp",
     description: `
     <p>Kyle Olszewski is a Senior Research Scientist in the Creative Vision group at Snap Research. His research interests include facial expression tracking, particularly for emerging platforms such as virtual and augmented reality, 3D reconstruction, and intuitive interfaces for image manipulation and synthesis.  </p><p>He was previously a Ph.D. student at the University of Southern California, working in the Geometric Capture Lab under Hao Li. </p><p>His research has been published in venues such as SIGGRAPH, SIGGRAPH Asia, ICCV and CVPR. He was a recipient of the 2018 Snap Research Fellowship.</p>
     `,
@@ -309,29 +309,14 @@ const teamMembersList = [
     metaTitle: "",
     metaDescription: `
         `,
-    name: "Menglei Chai",
+    name: "Junli Cao",
     email: "",
-    subTitle: "Lead Research Scientist",
-    researchAreas: "Computer Graphics, Computer Vision, Deep Learning",
+    subTitle: "Research Engineer",
+    researchAreas: "Computer Vision, Creative Vision",
     backUrl: "../team/category/creative-vision.html",
-    imageUrl: "../../img-for-members/Menglei_Chai_1.webp",
+    imageUrl: "../../img-for-members/junli-cao.webp",
     description: `
-    <p>Menglei is a Lead Research Scientist in the Creative Vision group at Snap Research. Menglei's research works  are on computer graphics and vision, specifically for image manipulation, physical animation, and human-centered modeling.  Prior to joining Snap Inc., he worked at Adobe Research as a Research intern. Menglei holds a PhD in Computer Science from Zhejiang University in Hangzhou, China. </p>
-    `,
-  },
-  {
-    id: 305,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Panos Achlioptas",
-    email: "",
-    subTitle: "Research Scientist",
-    researchAreas: "Machine Learning, Multimodal Learning, 3D Vision",
-    backUrl: "../team/category/creative-vision.html",
-    imageUrl: "../../img-for-members/Panos-A.webp",
-    description: `
-    <p>Panos recently became a Research Scientist at Snap Research, where he works for the Creative-Vision team. Panos received his Ph.D. degree from the Department of Computer Science Department of Stanford University for his work done with the Geometric Computing Lab under the supervision of Leo Guibas. Panos's research interests lie at the intersection of Computer Vision, Machine Learning, and Natural Language Processing. His area of focus is on designing deep learning models for visual data that emphasize semantic differences among objects, primarily as these are being expressed with natural language. A few years back Panos interned at the Facebook AI Research Lab in Menlo Park, and before that at Autodesk Research in San Francisco. He was a research assistant in the Haussler Lab at UCSC and an Erasmus scholar at the Max Planck Institute for Intelligent Systems in Tüebingen, DE.</p>
+    <p>Junli is a Research Engineer in the Creative Vision group at Snap Research facilitating the transition from research concepts to tangible products. His research interests lie in machine learning, computer vision and probabilistic graphical models. He received his Bachelor's degree in Mathematics from University of California, Los Angeles and Master's degree from Machine Learning Department in Carnegie Mellon University in 2023.</p>
     `,
   },
   {
@@ -362,7 +347,7 @@ teamMembersList.forEach((teamMember) => {
 const teamMembersForTeamCategory = {
   computationalImaging: [0, 1, 2, 3, 4, 5, 6],
   computationalSocialScience: [100, 102, 104, 105, 106, 107, 109, 110, 111],
-  creativeVision: [300, 301, 302, 303, 304, 305, 306],
+  creativeVision: [300, 301, 302, 303, 304, 306],
   admin: [],
 
   get all() {
