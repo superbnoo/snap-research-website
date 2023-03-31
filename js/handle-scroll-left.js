@@ -2,7 +2,7 @@ const { pathname } = window.location;
 
 const setScrollLeft = {
   "computational-imaging": 0,
-  "computational-social-science": 215,
+  "user-modeling-and-personalization": 215,
   "creative-vision": 480,
   all: 480,
   default: 0,

@@ -190,7 +190,7 @@ const teamMembersForTeamCategory = {
 for better use we call member id's with a hundred period
 
 - computationalImaging form `0`
-- computationalSocialScience from `100`
+- userModelingAndPersonalization from `100`
 - humanComputerInteraction from `200`
 - creativeVision from `300`
 - admin from `400`

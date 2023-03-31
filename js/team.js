@@ -4,7 +4,7 @@ $(function () {
   const pathnamePage = window.location.pathname;
   const teamsCategory = {
     "computational-imaging": "computationalImaging",
-    "computational-social-science": "computationalSocialScience",
+    "user-modeling-and-personalization": "userModelingAndPersonalization",
     "creative-vision": "creativeVision",
     all: "all",
   };
