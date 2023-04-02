@@ -5,6 +5,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Andrea Sornoza",
+    authorNames: ["Andrea Sornoza"],
     email: "",
     subTitle: "Program Manager",
     researchAreas: "Program Management",
@@ -20,6 +21,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Bing Zhou",
+    authorNames: ["Bing Zhou"],
     email: "",
     subTitle: "Senior Research Engineer",
     researchAreas: "Computational Imaging",
@@ -35,6 +37,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Guru Krishnan",
+    authorNames: ["Guru Krishnan", "Gurunandan Krishnan", "Gurunandan Krishnan Gorumkonda"],
     email: "",
     subTitle: "Manager, Lead Research Engineer",
     researchAreas: "Computational Imaging/Sensing, Computational Displays, Wearables, Computer Vision",
@@ -50,6 +53,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Jian (James) Wang",
+    authorNames: ["Jian Wang", "Jian (James) Wang"],
     email: "",
     subTitle: "Senior Research Scientist",
     researchAreas: "Computational Imaging, Computational Photography, Computer Vision",
@@ -67,6 +71,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Karl Bayer",
+    authorNames: ["Karl Bayer"],
     email: "",
     subTitle: "Senior Research Engineer",
     researchAreas: "Computational Imaging",
@@ -83,6 +88,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Shree Nayar",
+    authorNames: ["Shree Nayar"],
     email: "",
     subTitle: "Director, NYC Research",
     researchAreas: "Computational Imaging",
@@ -97,6 +103,7 @@ const teamMembersList = [
     metaTitle: "",
     metaDescription: ``,
     name: "Sizhuo Ma",
+    authorNames: ["Sizhuo Ma"],
     email: "",
     subTitle: "Research Scientist, Computational Imaging",
     researchAreas: "Computational Imaging, Computational Photography, Computer Vision",
@@ -112,6 +119,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Colin Eles",
+    authorNames: ["Colin Eles"],
     email: "",
     subTitle: "Lead Research Engineer, Manager",
     researchAreas: "User Modeling & Personalization",
@@ -127,6 +135,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Francesco Barbieri",
+    authorNames: ["Francesco Barbieri"],
     email: "",
     subTitle: "Senior Research Scientist",
     researchAreas: "Natural Language Processing, User Modeling & Personalization",
@@ -144,6 +153,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Maarten Bos",
+    authorNames: ["Maarten Bos"],
     email: "",
     subTitle: "Lead Research Scientist, Manager",
     researchAreas: "User Modeling & Personalization",
@@ -159,6 +169,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Neil Shah",
+    authorNames: ["Neil Shah"],
     email: "",
     subTitle: "Lead Research Scientist, Manager",
     researchAreas: "Graph Machine Learning, Data Mining, User Modeling & Personalization",
@@ -174,6 +185,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Ron Dotsch",
+    authorNames: ["Ron Dotsch"],
     email: "",
     subTitle: "Lead Research Scientist",
     researchAreas: "User Modeling & Personalization",
@@ -189,6 +201,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Shubham Vij",
+    authorNames: ["Shubham Vij"],
     email: "",
     subTitle: "Senior Research Engineer",
     researchAreas: "User Modeling & Personalization",
@@ -205,6 +218,7 @@ const teamMembersList = [
     Yozen Liu is a Research Engineer on the User Modeling & Personalization Team. Here at Snap Research, he works on Deep Graph Neural Networks and its Large-scale applications, as well as  Social/Data Science projects in understanding and predicting user behavior.
     `,
     name: "Yozen Liu",
+    authorNames: ["Yozen Liu"],
     email: "",
     subTitle: "Research Engineer",
     researchAreas: "User Modeling & Personalization, Graph Machine Learning, Data Mining, ",
@@ -220,6 +234,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Tong Zhao",
+    authorNames: ["Tong Zhao"],
     email: "",
     subTitle: "Research Scientist",
     researchAreas: "Graph Machine Learning, Data Mining, User Modeling & Personalization",
@@ -235,6 +250,7 @@ const teamMembersList = [
     metaDescription: `
     `,
     name: "Elham Ghazizadeh",
+    authorNames: ["Elham Ghazizadeh"],
     email: "",
     subTitle: "Research Engineer",
     researchAreas: "Machine Learning, Artificial Intelligence, User Modeling & Personalization",
@@ -250,6 +266,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Aliaksandr Siarohin",
+    authorNames: ["Aliaksandr Siarohin"],
     email: "",
     subTitle: "Research Scientist",
     researchAreas: "Generative methods, Self-Supervised Learning, Image Animation and Video Generation",
@@ -265,6 +282,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Hsin-Ying Lee",
+    authorNames: ["Hsin-Ying Lee"],
     email: "",
     subTitle: "Research Scientist",
     researchAreas: "Generative Models, Image Editing",
@@ -280,6 +298,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Jian Ren",
+    authorNames: ["Jian Ren"],
     email: "",
     subTitle: "Senior Research Scientist",
     researchAreas: "Computer Vision, Deep Learning",
@@ -295,6 +314,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Kyle Olszewski",
+    authorNames: ["Kyle Olszewski"],
     email: "",
     subTitle: "Senior Research Scientist",
     researchAreas: "Computer Vision, Creative Vision",
@@ -310,6 +330,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Junli Cao",
+    authorNames: ["Junli Cao"],
     email: "",
     subTitle: "Research Engineer",
     researchAreas: "Computer Vision, Creative Vision",
@@ -340,6 +361,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Sergey Tulyakov",
+    authorNames: ["Sergey Tulyakov"],
     email: "",
     subTitle: "Principal Research Scientist",
     researchAreas: "Computer Vision, Machine Learning, Deep Learning",

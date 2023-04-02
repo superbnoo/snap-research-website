@@ -26,14 +26,17 @@ $(function () {
   } else {
     categoryTeamMembers = teamMembersForTeamCategory.all;
   }
+  
   categoryTeamMembers = categoryTeamMembers.map((memberId) => {
     const members = teamMembersList.find((memner) => memner.id === memberId) || {};
-    return members.name
+    return members.authorNames
   });
-
+  
   publicationForCategory = publicationsList.filter((publication) => {
     return categoryTeamMembers.some((category) => {
-      return publication.authors.includes(category);
+      return category.some((name) => {
+        return publication.authors.includes(name);
+      });
     });
   });
 
