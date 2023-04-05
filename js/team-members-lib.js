@@ -319,6 +319,21 @@ const teamMembersList = [
     <p>Junli is a Research Engineer in the Creative Vision group at Snap Research facilitating the transition from research concepts to tangible products. His research interests lie in machine learning, computer vision and probabilistic graphical models. He received his Bachelor's degree in Mathematics from University of California, Los Angeles and Master's degree from Machine Learning Department in Carnegie Mellon University in 2023.</p>
     `,
   },
+{
+    id: 305,
+    metaTitle: "",
+    metaDescription: `
+        `,
+    name: "Qing Jin",
+    email: "",
+    subTitle: "Research Scientist",
+    researchAreas: "Computer Vision, Creative Vision",
+    backUrl: "../team/category/creative-vision.html",
+    imageUrl: "../../img-for-members/qing-jin.webp",
+    description: `
+    <p>Qing Jin is a Research Scientist working in the Creative Vision group at Snap Research. His research focuses on deep learning and generative models. He is also widely interested in theory of deep learning, especially methods from physics and computational neuroscience. He obtained his B.S. in microelectronics from Nankai University.</p>
+    `,
+  },
   {
     id: 306,
     metaTitle: "",
@@ -347,7 +362,7 @@ teamMembersList.forEach((teamMember) => {
 const teamMembersForTeamCategory = {
   computationalImaging: [0, 1, 2, 3, 4, 5, 6],
   userModelingAndPersonalization: [100, 102, 104, 105, 106, 107, 109, 110, 111],
-  creativeVision: [300, 301, 302, 303, 304, 306],
+  creativeVision: [300, 301, 302, 303, 304, 305, 306],
   admin: [],
 
   get all() {
