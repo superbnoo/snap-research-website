@@ -346,6 +346,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Qing Jin",
+    authorNames: ["Qing Jin"],
     email: "",
     subTitle: "Research Scientist",
     researchAreas: "Computer Vision, Creative Vision",
