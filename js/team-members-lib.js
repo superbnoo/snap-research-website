@@ -346,6 +346,7 @@ const teamMembersList = [
     metaDescription: `
         `,
     name: "Qing Jin",
+    authorNames: ["Junli Cao"],
     email: "",
     subTitle: "Research Scientist",
     researchAreas: "Computer Vision, Creative Vision",
