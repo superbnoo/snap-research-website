@@ -121,10 +121,12 @@
         teamMemberInfo.imageUrl = teamMemberInfo.imageUrl.slice(3);
       }
 
-      const teamMemberName = teamMemberInfo.name;
+      const teamMemberAuthorNames = teamMemberInfo.authorNames;
 
       publicationsForTeamMember = publicationsList.filter((publication) => {
-        return publication.authors.includes(teamMemberName);
+        return teamMemberAuthorNames.some((name) => {
+          return publication.authors.includes(name);
+        });
       });
 
       publicationsForTeamMember.forEach((publication) => {
