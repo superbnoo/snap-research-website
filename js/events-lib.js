@@ -911,6 +911,20 @@ const eventsList = [
     eventShort: "SIGIR 2023",
     url: "https://sigir.org/sigir2023/",
   },
+  {
+    id: 160,
+    date: "October 2, 2023",
+    eventName: "The 29th Annual International Conference On Mobile Computing And Networking",
+    eventShort: "MobiCom 2023",
+    url: "https://sigmobile.org/mobicom/2023/",
+  },
+  {
+    id: 161,
+    date: "August 20, 2023",
+    eventName: "24th INTERSPEECH Conference",
+    eventShort: "INTERSPEECH 2023",
+    url: "https://www.interspeech2023.org/",
+  },
 
   // {
   //   id: 105,
