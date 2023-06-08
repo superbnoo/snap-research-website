@@ -192,8 +192,7 @@ const teamMembersList = [
     backUrl: "../team/category/user-modeling-and-personalization.html",
     imageUrl: "../../img-for-members/Ron-Dotsch.webp",
     description: `
-    <p>Ron is a researcher on the intersection of behavioral science and artificial intelligence, with expertise in modeling, statistics, and machine learning (or in short: data science). His current research interests are on person and behavior modeling. His academic work aimed to understand social perception of faces and the role of stereotypes and prejudice, which resulted in over 60 journal publications and for which he received several professional awards. Before joining Snap, Ron worked at Anchormen, Philips Research, Utrecht University, and Princeton University. He earned a PhD in Social Science in 2011 from Radboud University Nijmegen.</p>
-    `,
+    <p>Ron is a Lead Research Scientist in the User Modeling & Personalization team at Snap Research, with a background in Behavioral Science and Artificial Intelligence. His work focuses on using machine learning and statistical approaches to better understand user behavior and the influence of context factors. He is most interested in the domain of online safety and abuse, although his work spans the entire palette of behaviors available on the Snapchat platform. His work has resulted in over 60 journal publications and he has received several professional awards for his academic work. Before joining Snap, Ron worked at Philips Research, Utrecht University, and Princeton University. He earned a PhD in Social Science in 2011 from Radboud University Nijmegen.</p>    `,
   },
   {
     id: 107,
