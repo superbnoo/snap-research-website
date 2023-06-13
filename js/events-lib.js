@@ -925,6 +925,27 @@ const eventsList = [
     eventShort: "INTERSPEECH 2023",
     url: "https://www.interspeech2023.org/",
   },
+  {
+    id: 162,
+    date: "July 9, 2023",
+    eventName: "61st Annual Meeting of the Association for Computational Linguistics",
+    eventShort: "ACL 2023",
+    url: "https://2023.aclweb.org/",
+  },
+  {
+    id: 163,
+    date: "July 23, 2023",
+    eventName: "40th International Conference on Machine Learning",
+    eventShort: "ICML 2023",
+    url: "https://icml.cc/Conferences/2023/Dates",
+  },
+  {
+    id: 164,
+    date: "August 6, 2023",
+    eventName: "29TH ACM SIGKDD Conference on Knowledge Discovery and Data Mining",
+    eventShort: "KDD 2023",
+    url: "https://kdd.org/kdd2023/",
+  },
 
   // {
   //   id: 105,
