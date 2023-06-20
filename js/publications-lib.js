@@ -2756,7 +2756,7 @@ const publicationsList = [
   },
   {
     id: 198,
-    date: "November 27, 2022",
+    date: "December 9, 2022",
     title: "Flashlight: Scalable Link Prediction with Effective Decoders",
     description: ``,
     authors: "Yiwei Wang, Bryan Hooi, Yozen Liu, Neil Shah",
@@ -2768,7 +2768,7 @@ const publicationsList = [
   },
   {
     id: 199,
-    date: "November 27, 2022",
+    date: "December 9, 2022",
     title: "AutoGDA: Automated Graph Data Augmentation for Node Classification",
     description: ``,
     authors: "Tong Zhao, Xianfeng Tang, Danqing Zhang, Haoming Jiang, Nikhil Rao, Yiwei Song, Pallav Agrawal, Karthik Subbian, Bing Yin, Meng Jiang",
@@ -2828,7 +2828,7 @@ const publicationsList = [
   },
   {
     id: 204,
-    date: "September 30, 2023",
+    date: "May 5, 2023",
     title: "MLPInit: Embarrassingly Simple GNN Training Acceleration with MLP Initialization",
     description: ``,
     authors: "Xiaotian Han, Tong Zhao, Yozen Liu, Xia Hu, Neil Shah",
@@ -2840,7 +2840,7 @@ const publicationsList = [
   },
   {
     id: 205,
-    date: "February 27, 2023",
+    date: "May 5, 2023",
     title: "Multi-task Self-supervised Graph Neural Networks Enable Stronger Task Generalization",
     description: ``,
     authors: "Mingxuan Ju, Tong Zhao, Qianlong Wen, Wenhao Yu, Neil Shah, Yanfang Ye, Chuxu Zhang",
@@ -2852,7 +2852,7 @@ const publicationsList = [
   },
   {
     id: 206,
-    date: "November 25, 2022",
+    date: "May 5, 2023",
     title: "Link Prediction with Non-contrastive Learning",
     description: ``,
     authors: "William Shiao, Zhichun Guo, Tong Zhao, Evangelos Papalexakis, Yozen Liu, Neil Shah",
@@ -2864,7 +2864,7 @@ const publicationsList = [
   },
   {
     id: 207,
-    date: "October 7, 2022",
+    date: "May 5, 2023",
     title: "Empowering Graph Representation Learning with Test-Time Graph Transformation",
     description: ``,
     authors: "Wei Jin, Tong Zhao, Jiayuan Ding, Yozen Liu, Jiliang Tang, Neil Shah",
