@@ -1675,6 +1675,37 @@ textarea {
   max-width: 600px;
 }
 
+.news-figure {
+  width: 100%;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  margin: 16px;
+}
+
+.news-figure .multiple-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.news-figure .single {
+  width: 100%;
+  display: block;
+  max-width: 900px;
+  margin: auto;
+}
+
+.multiple-img .three {
+  width: 33%;
+}
+
+.news-figure .caption {
+  display: block;
+  margin: 10px;
+  text-align: center;
+}
+
 /* ------------------ team pages ------------------*/
 .team--group {
   padding: 60px 0 96px;
