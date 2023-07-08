@@ -8,7 +8,7 @@ const newsList = [
       "Snap Research creates a new way to digitize and render assets for Augmented Reality",
     descriptionShort:
       "Snap Research presents NeRoic (Neural Object Capture and Rendering from Online Image Collections), a new method that explores how to digitize and render objects more easily than ever before, at SIGGRAPH.",
-    description: "../news/detail/rethinking-gnns-2023.html",
+    description: "../news/detail/neroic-2022.html",
     metaTitle:
       "Snap Research creates a new way to digitize and render assets for Augmented Reality",
     metaDescription: "Snap Research presents NeRoic (Neural Object Capture and Rendering from Online Image Collections), a new method that explores how to digitize and render objects more easily than ever before, at SIGGRAPH.",

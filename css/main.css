@@ -1706,6 +1706,10 @@ textarea {
   text-align: center;
 }
 
+.can-line-break {
+  display: inline!important;
+}
+
 /* ------------------ team pages ------------------*/
 .team--group {
   padding: 60px 0 96px;
