@@ -19,7 +19,7 @@ const newsList = [
     date: "July 8, 2023",
     link: "../news.html",
     slug: "rethink-graph-2023",
-    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
+    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>, co-authored with <a href=\"https://juanhui28.github.io/\">Juanhui Li</a>, <a href=\"https://www.cse.msu.edu/~shomerha/\">Harry Shomer</a>, <a href=\"https://yaoma24.github.io/\">Yao Ma</a> and <a href=\"https://www.cse.msu.edu/~tangjili/\">Jiliang Tang</a>",
     title:
       "Rethinking the role of Graph Neural Networks in Knowledge Graph Completion",
     descriptionShort:

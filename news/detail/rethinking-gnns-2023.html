@@ -1,18 +1,17 @@
 <div class="container content">
   <p>
-    Knowledge Graphs (KGs) are an efficient method to store relational and typically factual data (e.g. <a href="https://dl.acm.org/doi/10.1145/1376616.1376746&sa=D&source=editors&ust=1688775107377971&usg=AOvVaw0p7Y-giXX6YrKZ25df3Qrg">Freebase</a>, <a href="http://rtw.ml.cmu.edu/papers/carlson-aaai10.pdf&sa=D&source=editors&ust=1688775107378305&usg=AOvVaw1qbWyG_g8svlIDcgANBa1c">NELL</a>, and <a href="https://arxiv.org/pdf/1612.03975.pdf&sa=D&source=editors&ust=1688775107378517&usg=AOvVaw2Y2vcGxvVxJErv5NboV8xL">ConceptNet</a>). They are used for various applications including search, recommendation, and question-answering systems. However, real-world KGs are often incomplete and sparse, due to mismatches between real relationships and observed ones -- these systems simply cannot catalog the ever-growing and ever-changing body of human knowledge. To resolve this incompleteness, Knowledge Graph Completion (KGC) aims to predict and fill in these missing relationships. In recent years, several recent works have suggested that a common class of graph neural networks (GNNs), known as <a href="https://arxiv.org/pdf/1704.01212.pdf&sa=D&source=editors&ust=1688775107378726&usg=AOvVaw0ZztoKUEGbqbsy9HqxF3Uf"><em>Message Passing</em> Neural Networks</a> (MPNNs), are strongly effective for KGC owing to their strengths in modeling graph data. A key feature of MPNNs is the message passing (MP) process, by which nodes exchange information with each other in an iterative process, passing information over the graph.  Researchers have invested considerable efforts in developing advanced MP protocols to model KG information and achieve strong KGC performance.
+    Knowledge Graphs (KGs) are an efficient method to store relational and typically factual data (e.g. <a href="https://dl.acm.org/doi/10.1145/1376616.1376746">Freebase</a>, <a href="http://rtw.ml.cmu.edu/papers/carlson-aaai10.pdf">NELL</a>, and <a href="https://arxiv.org/pdf/1612.03975.pdf">ConceptNet</a>). They are used for various applications including search, recommendation, and question-answering systems. However, real-world KGs are often incomplete and sparse, due to mismatches between real relationships and observed ones -- these systems struggle to catch-up to the ever-changing body of human knowledge. In response, Knowledge Graph Completion (KGC) aims to predict and fill in these missing relationships. In recent years, several recent works have suggested that a common class of graph neural networks (GNNs), known as <a href="https://arxiv.org/pdf/1704.01212.pdf"><em>Message Passing</em> Neural Networks</a> (MPNNs), are strongly effective for KGC owing to their strengths in modeling graph data. A key feature of MPNNs is the message passing (MP) process, by which nodes exchange information with each other in an iterative process, passing information over the graph.  Researchers have invested considerable efforts in developing advanced MP protocols to model KG information and achieve strong KGC performance.
   </p>
   <p>
-    In a paper titled <a class="can-line-break" href="=https://arxiv.org/pdf/2205.10652.pdf&sa=D&source=editors&ust=1688775107379156&usg=AOvVaw3_Nni2HWY3ialtU99PRB-h"><strong>Are Message Passing Neural Networks Really Helpful for Knowledge Graph Completion?</strong></a> to be presented at <strong>ACL 2023</strong>, we made a surprising discovery with our collaborators: we found that the considered-crucial MP component in MPNNs is not in fact the cause of reported improvements in performance on several KGC benchmarks. We demonstrate this by replacing the MP module with a Multi-Layer Perceptron (MLP) in several KGC-based MPNN models and test them across diverse datasets. Remarkably, these MLP-based models achieved performance on par with their MPNN counterparts. Through thorough investigation, we found that MP has almost no effect on the performance; instead, other components like the scoring and loss functions had an unexpectedly profound impact. Leveraging these insights, we proposed an ensemble model that utilizes multiple MLPs to outperform MPNN-based models with a fraction of the computational cost, offering a more efficient approach to KGC.
+    In a paper titled <a class="can-line-break" href="https://arxiv.org/pdf/2205.10652.pdf"><strong>Are Message Passing Neural Networks Really Helpful for Knowledge Graph Completion?</strong></a> presented at this year's <strong>ACL 2023</strong>, we made a surprising discovery with our <a href="http://dse.cse.msu.edu/">collaborators</a>: we found that the considered-crucial MP component in MPNNs is not in fact the cause of reported improvements in performance on several KGC benchmarks. We demonstrate this by replacing the MP module with a Multi-Layer Perceptron (MLP) in several KGC-based MPNN models and test them across diverse datasets. Remarkably, these MLP-based models achieved performance on par with their MPNN counterparts. Through thorough investigation, we found that MP has almost no effect on the performance; instead, other components like the scoring and loss functions had an unexpectedly profound impact. Leveraging these insights, we proposed an ensemble model that utilizes multiple MLPs to outperform MPNN-based models with a fraction of the computational cost, offering a more efficient approach to KGC.
   </p>
-  <br/>
   <br/>
 
   <p class="sub-section">
     <b>Does Message Passing Really Help KGC?</b>
   </p>
   <p>
-    In our investigation of MPNN-based KGC models we concentrated on three key components (see <strong>Figure 1</strong>): message passing, scoring functions, and loss functions. Until now, the key contributor to the performance of MPNN-based KGC models has been elusive. Conventional wisdom often credits MP as the primary contributor, prompting our line of questioning: <em>Does message passing really help KGC?</em> To this end, we replaced the MP module with an MLP for multiple popular MPNN models (including <a href="https://arxiv.org/abs/1911.03082&sa=D&source=editors&ust=1688775107379805&usg=AOvVaw0bYy6jySe7Z5LAr_0HigHc">CompGCN</a>, <a href="https://arxiv.org/abs/1703.06103&sa=D&source=editors&ust=1688775107380038&usg=AOvVaw1advOLgdnFJC6TDY9al658">RGCN</a>, and <a href="https://aclanthology.org/P19-1466.pdf&sa=D&source=editors&ust=1688775107380213&usg=AOvVaw0dCmqaJ8GYfjdl-LvpHE2C">KBGAT</a>), holding other architectural details constant for fairness.
+    In our investigation of MPNN-based KGC models we concentrated on three key components (see <strong>Figure 1</strong>): message passing, scoring functions, and loss functions. Until now, the key contributor to the performance of MPNN-based KGC models has been elusive. Conventional wisdom often credits MP as the primary contributor, prompting our line of questioning: <em>Does message passing really help KGC?</em> To this end, we replaced the MP module with an MLP for multiple popular MPNN models (including <a href="https://arxiv.org/abs/1911.03082">CompGCN</a>, <a href="https://arxiv.org/abs/1703.06103">RGCN</a>, and <a href="https://aclanthology.org/P19-1466.pdf">KBGAT</a>), holding other architectural details constant for fairness.
   </p>
   
   <div class="news-figure">
@@ -23,7 +22,7 @@
   </div>
 
   <p>
-    <b>Figure 2</b> presents our findings on the popular <a href="https://huggingface.co/datasets/KGraph/FB15k-237&sa=D&source=editors&ust=1688775107380790&usg=AOvVaw3x3mZBXer1-b5Ey3ftwO8N">FB15K-237</a> dataset: notably, MLP-based counterparts achieve comparable performance to each respective MPNN-based model (see our <a href="https://arxiv.org/pdf/2205.10652.pdf&sa=D&source=editors&ust=1688775107381012&usg=AOvVaw3wcBJbWIB-2jXmvXqRnxkA">paper</a> for similar findings on other datasets), implying the limited value of MP.
+    <b>Figure 2</b> presents our findings on the popular <a href="https://huggingface.co/datasets/KGraph/FB15k-237">FB15K-237</a> dataset: notably, MLP-based counterparts achieve comparable performance to each respective MPNN-based model (see our <a href="https://arxiv.org/pdf/2205.10652.pdf">paper</a> for similar findings on other datasets), implying the limited value of MP.
   </p>
 
   <div class="news-figure">
@@ -46,14 +45,13 @@
     Unveiling the limited influence of MP naturally prompts the question: <em>What components are truly helpful in enhancing performance?</em> This leads us to investigate the remaining components of MPNN-based KGC models: scoring and loss functions.
   </p>
   <br/>
-  <br/>
 
   <p class="sub-section">
     <b>Scoring and Loss Functions in MPNN-based Models</b>
   </p>
 
   <p>
-    <b>Scoring Function</b>. In the original setting, CompGCN and KBGAT employ <a href="https://ojs.aaai.org/index.php/AAAI/article/download/11573/11432&sa=D&source=editors&ust=1688775107383248&usg=AOvVaw2_zWlvNy_rf4EUPj6sup3b">ConvE</a> as their scoring function, while the RGCN uses <a href="https://arxiv.org/pdf/1412.6575.pdf&sa=D&source=editors&ust=1688775107383477&usg=AOvVaw1rBR7OGfq1f-CB06ruRJRv">DistMult</a>. We expand our investigation to observe the performance of CompGCN and KBGAT with DistMult and RGCN with ConvE. All other settings are fixed during this investigation.
+    <b>Scoring Function</b>. In the original setting, CompGCN and KBGAT employ <a href="https://ojs.aaai.org/index.php/AAAI/article/download/11573/11432">ConvE</a> as their scoring function, while the RGCN uses <a href="https://arxiv.org/pdf/1412.6575.pdf">DistMult</a>. We expand our investigation to observe the performance of CompGCN and KBGAT with DistMult and RGCN with ConvE. All other settings are fixed during this investigation.
   </p>
 
   <p>
@@ -68,11 +66,11 @@
   </div>
 
   <p>
-    <b>Loss Function</b>. CompGCN, RGCN, and KBGAT all adopt the <a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html&sa=D&source=editors&ust=1688775107384243&usg=AOvVaw3tfTqJIxYF5a9jyrff52wJ">BCE loss</a>. One major difference however is in the number of negative samples used in training. While CompGCN and KBGAT utilize all negative samples for each positive sample, RGCN only randomly selects 10. As such, we investigate the impact that varying the number of negatives per positive sample has on the performance.
+    <b>Loss Function</b>. CompGCN, RGCN, and KBGAT all adopt the <a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html">BCE loss</a>. One major difference however is in the number of negative samples used in training. While CompGCN and KBGAT utilize all negative samples for each positive sample, RGCN only randomly selects 10. As such, we investigate the impact that varying the number of negatives per positive sample has on the performance.
   </p>
 
   <p>
-    Results are presented in <b>Figure 4</b>, where “w/o” denotes utilizing all negative samples, and N is the number of entities in KG. The results indicate that the quantity of negative samples plays a critical role in model performance, concurring with <a href="https://arxiv.org/pdf/2005.09863.pdf&sa=D&source=editors&ust=1688775107384716&usg=AOvVaw1iaahgS1h1wFO87PmdYVoT">prior work</a>. Increasing the number of negative samples generally improves performance. However, utilizing all negative samples isn’t a prerequisite for achieving superior results. This is noteworthy as employing all negative samples incurs higher computational costs. Hence, a thoughtful selection of the number of negative samples, tailored to each model and dataset, is important.
+    Results are presented in <b>Figure 4</b>, where “w/o” denotes utilizing all negative samples, and N is the number of entities in KG. The results indicate that the quantity of negative samples plays a critical role in model performance, concurring with <a href="https://arxiv.org/pdf/2005.09863.pdf">prior work</a>. Increasing the number of negative samples generally improves performance. However, utilizing all negative samples isn’t a prerequisite for achieving superior results. This is noteworthy as employing all negative samples incurs higher computational costs. Hence, a thoughtful selection of the number of negative samples, tailored to each model and dataset, is important.
   </p>
 
   <div class="news-figure">
@@ -82,14 +80,13 @@
     <div class="caption"><b>Figure 4:</b> KGC results (%) with varying numbers of negative samples in the loss function. The loss function significantly impacts model performance. Furthermore, utilizing 10 negative samples is not enough. For different datasets and methods, the optimal number of negative samples varies.</div>  
   </div>
   <br/>
-  <br/>
 
   <p class="sub-section">
     <b>MLPs with Various Scoring and Loss Functions</b>
   </p>
 
   <p>
-    Drawing on our previous analysis, we questioned the necessity of MP in KGC.  A negative finding encouraged us to explore the potential of creating efficient MLP-based methods for KGC, which, suggests promise, given that MLP-based methods enjoy superior efficiency during both <a href="https://arxiv.org/pdf/2210.00102.pdf&sa=D&source=editors&ust=1688775107385421&usg=AOvVaw1eaAOu55Ah3NLmNpPi8zNj">training</a> and <a href="https://arxiv.org/pdf/2110.08727.pdf&sa=D&source=editors&ust=1688775107385629&usg=AOvVaw3tqyifUN0Mwo5jhnMdXLSm">inference</a> phases, owing to the absence of MP operations. Similar to the MPNN models, we first study the impact of the scoring and loss function in MLP models.
+    Drawing on our previous analysis, we questioned the necessity of MP in KGC.  A negative finding encouraged us to explore the potential of creating efficient MLP-based methods for KGC, which, suggests promise, given that MLP-based methods enjoy superior efficiency during both <a href="https://arxiv.org/pdf/2210.00102.pdf">training</a> and <a href="https://arxiv.org/pdf/2110.08727.pdf">inference</a> phases, owing to the absence of MP operations. Similar to the MPNN models, we first study the impact of the scoring and loss function in MLP models.
   </p>
 
   <p>
@@ -103,14 +100,13 @@
     <div class="caption"><b>Figure 5:</b> KGC results (%) of MLP-based methods with different combinations of scoring and loss functions. Both the scoring and loss functions impact the performance of MLP-based models.</div>  
   </div>
   <br/>
-  <br/>
 
   <p class="sub-section">
     <b>Ensembling MLPs</b>
   </p>
 
   <p>
-    To account for this variation, we next explore ensembling these configurations to enhance performance. By doing so, models that utilize different combinations of scoring and loss functions can complement one another.  We select a few MLP-based models that demonstrate promising performance on validation sets and integrate them for final prediction. The results are shown in <b>Figure 6</b>, where we use MLP-ensemble to denote the ensemble model. Impressively, this model outperforms both the leading individual MLP-based methods and MPNN-based models. The performance boost is particularly noticeable on FB15K-237 and <a href="https://paperswithcode.com/dataset/nell-995&sa=D&source=editors&ust=1688775107386473&usg=AOvVaw2RLba3HRq78y0W3btC9EiJ">NELL-995</a>. This finding also underlines the non-essential nature of the MP component for KGC. Furthermore, it hints at the complementary roles of scoring and loss functions.
+    To account for this variation, we next explore ensembling these configurations to enhance performance. By doing so, models that utilize different combinations of scoring and loss functions can complement one another.  We select a few MLP-based models that demonstrate promising performance on validation sets and integrate them for final prediction. The results are shown in <b>Figure 6</b>, where we use MLP-ensemble to denote the ensemble model. Impressively, this model outperforms both the leading individual MLP-based methods and MPNN-based models. The performance boost is particularly noticeable on FB15K-237 and <a href="https://paperswithcode.com/dataset/nell-995">NELL-995</a>. This finding also underlines the non-essential nature of the MP component for KGC. Furthermore, it hints at the complementary roles of scoring and loss functions.
   </p>
 
   <div class="news-figure">
@@ -119,7 +115,6 @@
       alt="Figure 6" />
     <div class="caption"><b>Figure 6:</b> KGC results (%) of the ensembled MLP-based methods, which outperform the MPNN-based models.</div>  
   </div>
-  <br/>
   <br/>
   
   <p class="sub-section">
