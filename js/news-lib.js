@@ -4,6 +4,7 @@ const newsList = [
     date: "August 8, 2022",
     link: "../news.html",
     slug: "neroic-2022",
+    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
     title:
       "Snap Research creates a new way to digitize and render assets for Augmented Reality",
     descriptionShort:
@@ -18,14 +19,15 @@ const newsList = [
     date: "July 8, 2023",
     link: "../news.html",
     slug: "rethink-graph-2023",
+    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
     title:
       "Rethinking the role of Graph Neural Networks in Knowledge Graph Completion",
     descriptionShort:
-      "Knowledge Graphs (KGs) are an efficient method to store relational and typically factual data (e.g. Freebase, NELL, and ConceptNet). They are used for various applications including search, recommendation, and question-answering systems.",
+      "We present surprising findings at ACL 2023, exploring previously misunderstood limitations of graph neural networks on knowledge graph completion tasks.",
     description: "../news/detail/rethinking-gnns-2023.html",
     metaTitle:
       "Rethinking the role of Graph Neural Networks in Knowledge Graph Completion",
-    metaDescription: "Knowledge Graphs (KGs) are an efficient method to store relational and typically factual data (e.g. Freebase, NELL, and ConceptNet). They are used for various applications including search, recommendation, and question-answering systems.",
+    metaDescription: "We present surprising findings at ACL 2023, exploring previously misunderstood limitations of graph neural networks on knowledge graph completion tasks.",
   }
 ];
 
