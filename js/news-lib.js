@@ -4,7 +4,7 @@ const newsList = [
     date: "August 8, 2022",
     link: "../news.html",
     slug: "neroic-2022",
-    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
+    postedBy: "",
     title:
       "Snap Research creates a new way to digitize and render assets for Augmented Reality",
     descriptionShort:
