@@ -38,7 +38,8 @@
     }
   });
   $(function () {
-    const mainPublications = getPublicationsByIDs([103,98,67,80,77], '', true);
+    const fiveIds = get5Latest25Papers();
+    const mainPublications = getPublicationsByIDs(fiveIds, '', true); // [103,98,67,80,77]
     $('.home-publication-item-container').loadTemplate($("#home-publication-list-item"), mainPublications);
   });
 </script>
