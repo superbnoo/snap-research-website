@@ -114,22 +114,6 @@ const teamMembersList = [
     `,
   },
   {
-    id: 100,
-    metaTitle: "",
-    metaDescription: `
-        `,
-    name: "Colin Eles",
-    authorNames: ["Colin Eles"],
-    email: "",
-    subTitle: "Lead Research Engineer, Manager",
-    researchAreas: "User Modeling & Personalization",
-    backUrl: "../team/category/user-modeling-and-personalization.html",
-    imageUrl: "../../img-for-members/Colin_Eles_1.webp",
-    description: `
-    <p>Colin is a Lead Research Engineer whose initial focus is to advance cloud infrastructure and build out new systems for Snap Research. His work allows Research Engineers and Scientists to train models, run experiments, and solicit feedback among other tasks. He joined Snap Inc. in 2017 as a member of the Developer Tools team, creating tools to improve code quality and manage build infrastructure. Previously, he worked for Ever.ai, a face recognition platform, where he set up the initial machine learning infrastructure for both training and inference. Colin received his Master’s degree in Software Engineering from McMaster University.&nbsp;</p>
-    `,
-  },
-  {
     id: 102,
     metaTitle: "",
     metaDescription: `
@@ -145,6 +129,22 @@ const teamMembersList = [
     <p>Francesco is a Senior Research Scientist at Snap Research, whose research is focused on Natural Language Processing. He has been working on understanding social media communications, visual and music domain. He is looking to further his research in multimodality. His work was published in top conferences such as ACL, EMNLP, NAACL, EACL, COLING, and CVPR. </p><p>
     Francesco received his Ph.D. in Computer Science from Pompeu Fabra University in Barcelona, where he also completed his post-doc, with a thesis on machine learning algorithms for irony and emojis. Prior to joining Snap Research, he was a research scientist at Telefonica, working on machine learning algorithms for mental health. More on his work can be found <u><a href="https://scholar.google.com/citations?user=B10uzI4AAAAJ&hl=en&oi=ao">here</a></u>.
     </p>
+    `,
+  },
+  {
+    id: 103,
+    metaTitle: "",
+    metaDescription: `
+    `,
+    name: "Leonardo Neves",
+    authorNames: ["Leonardo Neves"],
+    email: "",
+    subTitle: "Principal Research Engineer",
+    researchAreas: "Natural Language Processing, User Modeling & Personalization",
+    backUrl: "../team/category/user-modeling-and-personalization.html",
+    imageUrl: "../../img-for-members/Leonardo_Neves_1.webp",
+    description: `
+    <p>Leonardo is a Principal Research Engineer at Snap Research. His research is focused on Natural Language Processing and Data Mining, specifically in learning additional context to improve language understanding. </p><p>Leonardo's recent works involve personalizing and adding contextual information to large language models and leveraging sequence modeling for behavior understanding. </p><p>Before joining Snap Inc., Leonardo worked for Pivotal Software Inc., Intel, and Yelp, and, more recently, was the Head of Applied Research at Grammarly. He earned a Master's in Intelligent Information Systems from Carnegie Mellon University.</p>
     `,
   },
   {
@@ -176,7 +176,7 @@ const teamMembersList = [
     backUrl: "../team/category/user-modeling-and-personalization.html",
     imageUrl: "../../img-for-members/Neil_Shah_1.webp",
     description: `
-    <p>Neil is a Lead Research Scientist and Manager of the User Modeling & Personalization team at Snap Research.  His work focuses on machine learning algorithms and applications on large-scale graph data, especially towards algorithms and applications for modeling online human behavior.  His work has resulted in 50+ conference and journal publications, in top venues such as ICLR, NeurIPS, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an organizer, chair and senior program committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.</p>
+    <p>Neil is a Lead Research Scientist and Manager of the User Modeling & Personalization team at Snap Research.  His work focuses on machine learning algorithms and applications on large-scale graph data, especially towards algorithms and applications for modeling online human behavior.  His work has resulted in 60+ conference and journal publications, in top venues such as ICLR, NeurIPS, KDD, WSDM, WWW, AAAI and more, including several best-paper awards. He has also served as an Organizer, Chair, Area chair, and Senior Program Committee member at a number of these. He has had previous research experiences at Lawrence Livermore National Laboratory, Microsoft Research, and Twitch.  He earned a PhD in Computer Science in 2017 from Carnegie Mellon University’s Computer Science Department, funded partially by the NSF Graduate Research Fellowship.</p>
     `,
   },
   {
@@ -220,7 +220,7 @@ const teamMembersList = [
     authorNames: ["Yozen Liu"],
     email: "",
     subTitle: "Research Engineer",
-    researchAreas: "User Modeling & Personalization, Graph Machine Learning, Data Mining, ",
+    researchAreas: "Graph Machine Learning, Data Mining, User Modeling & Personalization",
     backUrl: "../team/category/user-modeling-and-personalization.html",
     imageUrl: "../../img-for-members/Yozen_Liu_2019.webp",
     description: `
@@ -383,7 +383,7 @@ teamMembersList.forEach((teamMember) => {
 
 const teamMembersForTeamCategory = {
   computationalImaging: [0, 1, 2, 3, 4, 5, 6],
-  userModelingAndPersonalization: [100, 102, 104, 105, 106, 107, 109, 110, 111],
+  userModelingAndPersonalization: [102, 103, 104, 106, 107, 109, 110, 111, 105],
   creativeVision: [300, 301, 302, 303, 304, 305, 306],
   admin: [],
 
