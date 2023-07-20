@@ -1704,6 +1704,10 @@ textarea {
   margin: auto;
 }
 
+.multiple-img .two {
+  width: 45%;
+}
+
 .multiple-img .three {
   width: 33%;
 }

@@ -21,121 +21,147 @@
   <br/>
 
   <p class="sub-section">
-    <b>Does Message Passing Really Help KGC?</b>
+    <b>Cluster Validation Indices</b>
   </p>
   <p>
-    In our investigation of MPNN-based KGC models we concentrated on three key components (see <strong>Figure 1</strong>): message passing, scoring functions, and loss functions. Until now, the key contributor to the performance of MPNN-based KGC models has been elusive. Conventional wisdom often credits MP as the primary contributor, prompting our line of questioning: <em>Does message passing really help KGC?</em> To this end, we replaced the MP module with an MLP for multiple popular MPNN models (including <a href="https://arxiv.org/abs/1911.03082">CompGCN</a>, <a href="https://arxiv.org/abs/1703.06103">RGCN</a>, and <a href="https://aclanthology.org/P19-1466.pdf">KBGAT</a>), holding other architectural details constant for fairness.
+    The core idea behind CARL-G is that contrastive learning (a recent advance in representation learning
+    that has revolutionized how we learn representations without labels) often performs a similar task to
+    clustering. Contrastive learning and clustering both pull positive samples closer together and push
+    negative samples apart. However, contrastive learning has only become popular relatively recently,
+    while clustering has had a long history, which has led to many developments, creating rich
+    opportunities for transfer between the lines of work.
   </p>
-  
+
+  <p>
+    One example of this is the well-studied class of Clustering Validation Indices (CVIs), which are
+    unsupervised estimators of cluster quality. These typically compare a ratio of intra-cluster to inter-
+    cluster distance with the intuition that samples within the same cluster should be closer together, and
+    those in different clusters should be further apart. A popular example of a CVI is the Silhouette score.
+  </p>
+  <br/>
+
+  <p class="sub-section">
+    <b>Learning Representations with CVI-Inspired Loss Functions</b>
+  </p>
+
+  <p>
+    Our paper explores the novel idea of using a CVI as a loss function to optimize a neural network
+    directly (in our case, a graph neural network, or GNN). A CVI requires two inputs: a set of samples and
+    cluster assignments for each sample. In our case, the samples are node embeddings generated via a
+    GNN encoder. Next, we can run a clustering algorithm (we find k-means works best) on the points to
+    obtain a cluster embedding. We can then directly use a CVI as the loss function and backpropagate to
+    update our GNN weights. We describe our architecture in more detail in the next section.
+  </p>
+
+  <p>
+    We also show theoretical connections between a silhouette-based loss function and the commonly-
+    used contrastive margin loss function. We prove that the silhouette-based loss is equivalent to the
+    margin loss in both of their optimal cases (see paper for details). We also show that both are sensitive
+    to different parameters - the effectiveness of silhouette-based losses depends on clustering error rate,
+    while margin loss is sensitive to graph structure. This is notable, since adopting a different clustering
+    algorithm to improve results on a given dataset is usually achievable, but changing the graph&#39;s
+    structure is typically infeasible.
+  </p>
+  <br/>
+
+  <p class="sub-section">
+    <b>Architecture</b>
+  </p>
   <div class="news-figure">
     <img class="single"
-      src="/news/media/rethinking_gnns/image4.png"
+      src="/news/media/accelerating-graph/Figure1.png"
       alt="Figure 1" />
-    <div class="caption"><b>Figure 1:</b> A general MPNN framework for KGC. It has three main components: message passing, scoring function, and loss function.</div>  
+    <div class="caption"><b>Figure 1:</b> The general architecture of CARL-G. The choice of clustering 
+      algorithm and loss function(CVI) are flexible.</div>  
+  </div>
+  <p>
+    The input to CARL-G is a graph G with features for each node, represented by the feature matrix X. Our
+    method aims to produce a set of embeddings H that can be used for various downstream tasks, like
+    node clustering, similarity search, or node classification.
+  </p>
+  <p>
+    As shown above in Figure 1, CARL-G consists of four steps:
+  </p>
+  <ol>
+    <li>Compute the embeddings H of the graph G using a GNN encoder.</li>
+    <li>Compute the task-specific embeddings Z using an MLP encoder.</li>
+    <li>Perform clustering (e.g., k-means) on Z to obtain a clustering C.</li>
+    <li>Backpropagate using CVI-based loss (e.g., silhouette).</li>
+  </ol>
+  <p>
+    Once trained, we use H (the embeddings produced by the GNN encoder) for downstream tasks. It is
+    worth noting that this framework works with different clustering methods and different CVIs. It is
+    especially flexible as it allows for non-differentiable clustering methods (since no gradients flow
+    through the clustering step).
+  </p>
+  <p>
+    This allows us to avoid many of the limitations of existing methods. For instance, many current state-
+    of-the-art methods require careful generation of augmentations (systematic and careful perturbations
+    of data points that increase the diversity of training samples) and/or complex architectures consisting
+    of multiple networks that have shared or exponentially averaged weights. Our method avoids these
+    limitations with a simple architecture and without augmentations. Depending on the choice of CVI
+    (e.g., the simplified silhouette), we may also reduce the cost of obtaining contrastive samples
+    (compared to typical contrastive negative sampling) by working directly with cluster centroids instead
+    of individual points.
+  </p>
+  <br/>
+
+  <p class="sub-section">
+    <b>Results</b>
+  </p>
+  <p>
+    Following existing work in the area, we evaluate CARL-G on three tasks: node classification, node
+    clustering, and node similarity search. CARL-G outperforms the baselines on 4/5 datasets in node
+    classification and is comparable with AF-GRL, the best-performing baseline in the node clustering and
+    similarity search tasks. Below, in Figure 2, we show a table of CARL-G’s strong node classification
+    performance relative to other methods.
+  </p>
+
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/accelerating-graph/Figure2.png"
+      alt="Figure 2" />
+    <div class="caption"><b>Figure 2:</b> Node classification accuracy of CARL-G with different CVIs 
+      compared to baselines across 5 datasets.</div>  
   </div>
 
   <p>
-    <b>Figure 2</b> presents our findings on the popular <a href="https://huggingface.co/datasets/KGraph/FB15k-237">FB15K-237</a> dataset: notably, MLP-based counterparts achieve comparable performance to each respective MPNN-based model (see our <a href="https://arxiv.org/pdf/2205.10652.pdf">paper</a> for similar findings on other datasets), implying the limited value of MP.
+    However, the key advantage of CARL-G lies in its large efficiency improvements over existing methods.
+    In FIgure 3, we show CARL-G’s training time and GPU memory usage compared to other baseline
+    methods. We can see that CARL-G is much more efficient than the baselines when using VRC (Variance
+    Ratio Criterion) or simplified silhouette. These experiments are conducted on standard graph
+    benchmark datasets in the full-batch setting, and we plan to run experiments on larger-scale datasets
+    in the future. Please refer to our paper for more details.
   </p>
 
   <div class="news-figure">
     <div class="multiple-img">
-      <img class="three"
-      src="/news/media/rethinking_gnns/image5.png"
-      alt="Figure 2" />
-      <img class="three"
-      src="/news/media/rethinking_gnns/image6.png"
-      alt="Figure 2" />
-      <img class="three"
-      src="/news/media/rethinking_gnns/image7.png"
-      alt="Figure 2" />
-    </div>
-
-    <div class="caption"><b>Figure 2:</b> KGC results (%) of CompGCN/CompGCN-MLP, RGCN/RGCN-MLP, and KBGAT/KBGAT-MLP on FB15K-237. CompGCN-MLP, RGCN-MLP, and KBGAT-MLP are the MLP counterparts of CompGCN, RGCN, and KBGAT respectively, by replacing their MP process.  The MLP counterparts achieve compare performance as the corresponding MPNN models</div>  
-  </div>
-  
-  <p>
-    Unveiling the limited influence of MP naturally prompts the question: <em>What components are truly helpful in enhancing performance?</em> This leads us to investigate the remaining components of MPNN-based KGC models: scoring and loss functions.
-  </p>
-  <br/>
-
-  <p class="sub-section">
-    <b>Scoring and Loss Functions in MPNN-based Models</b>
-  </p>
-
-  <p>
-    <b>Scoring Function</b>. In the original setting, CompGCN and KBGAT employ <a href="https://ojs.aaai.org/index.php/AAAI/article/download/11573/11432">ConvE</a> as their scoring function, while the RGCN uses <a href="https://arxiv.org/pdf/1412.6575.pdf">DistMult</a>. We expand our investigation to observe the performance of CompGCN and KBGAT with DistMult and RGCN with ConvE. All other settings are fixed during this investigation.
-  </p>
-
-  <p>
-    <b>Figure 3</b> presents several intriguing insights: Firstly, it’s evident that CompGCN, RGCN, and KBGAT’s performance fluctuates under different scoring functions. This demonstrates that the choice of scoring function strongly influences the performance in a dataset-dependent manner. Secondly, a performance disparity still exists between CompGCN (or KBGAT) and RGCN on FB15K-237, even when they utilize the same scoring function (either DistMult or ConvE). This suggests that the scoring function is influential but not the sole factor impacting the model performance.
-  </p>
-
-  <div class="news-figure">
-    <img class="single"
-      src="/news/media/rethinking_gnns/image2.png"
+      <img class="two"
+      src="/news/media/accelerating-graph/Figure3a.png"
       alt="Figure 3" />
-    <div class="caption"><b>Figure 3:</b> KGC results (%) with various scoring functions. Models behave differently with different scoring functions.</div>  
-  </div>
-
-  <p>
-    <b>Loss Function</b>. CompGCN, RGCN, and KBGAT all adopt the <a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html">BCE loss</a>. One major difference however is in the number of negative samples used in training. While CompGCN and KBGAT utilize all negative samples for each positive sample, RGCN only randomly selects 10. As such, we investigate the impact that varying the number of negatives per positive sample has on the performance.
-  </p>
-
-  <p>
-    Results are presented in <b>Figure 4</b>, where “w/o” denotes utilizing all negative samples, and N is the number of entities in KG. The results indicate that the quantity of negative samples plays a critical role in model performance, concurring with <a href="https://arxiv.org/pdf/2005.09863.pdf">prior work</a>. Increasing the number of negative samples generally improves performance. However, utilizing all negative samples isn’t a prerequisite for achieving superior results. This is noteworthy as employing all negative samples incurs higher computational costs. Hence, a thoughtful selection of the number of negative samples, tailored to each model and dataset, is important.
-  </p>
-
-  <div class="news-figure">
-    <img class="single"
-      src="/news/media/rethinking_gnns/image8.png"
-      alt="Figure 4" />
-    <div class="caption"><b>Figure 4:</b> KGC results (%) with varying numbers of negative samples in the loss function. The loss function significantly impacts model performance. Furthermore, utilizing 10 negative samples is not enough. For different datasets and methods, the optimal number of negative samples varies.</div>  
+      <img class="two"
+      src="/news/media/accelerating-graph/Figure3b.png"
+      alt="Figure 3" />
+    </div>
+    <div class="caption"><b>Figure 3:</b> Left: GPU memory usage comparison between CARL-G and baseline methods.
+      Right: Total training time comparison between CARL-G and baseline methods. Note that the y-axis is
+      on a log scale.</div>  
   </div>
   <br/>
 
-  <p class="sub-section">
-    <b>MLPs with Various Scoring and Loss Functions</b>
-  </p>
-
-  <p>
-    Drawing on our previous analysis, we questioned the necessity of MP in KGC.  A negative finding encouraged us to explore the potential of creating efficient MLP-based methods for KGC, which, suggests promise, given that MLP-based methods enjoy superior efficiency during both <a href="https://arxiv.org/pdf/2210.00102.pdf">training</a> and <a href="https://arxiv.org/pdf/2110.08727.pdf">inference</a> phases, owing to the absence of MP operations. Similar to the MPNN models, we first study the impact of the scoring and loss function in MLP models.
-  </p>
-
-  <p>
-    Our findings, presented in <b>Figure 5</b>, further underline the non-essential role of MP in KGC. Our MLP-based models can achieve comparable or even stronger performance than MPNN models. We also note the continued significant influence of (dataset dependent) scoring and loss functions on MLP-based KGC model performance. This variability implies that the influence of the scoring and loss functions, especially the negative sampling strategy, differs across datasets.
-  </p>
-
-  <div class="news-figure">
-    <img class="single"
-      src="/news/media/rethinking_gnns/image1.png"
-      alt="Figure 5" />
-    <div class="caption"><b>Figure 5:</b> KGC results (%) of MLP-based methods with different combinations of scoring and loss functions. Both the scoring and loss functions impact the performance of MLP-based models.</div>  
-  </div>
-  <br/>
-
-  <p class="sub-section">
-    <b>Ensembling MLPs</b>
-  </p>
-
-  <p>
-    To account for this variation, we next explore ensembling these configurations to enhance performance. By doing so, models that utilize different combinations of scoring and loss functions can complement one another.  We select a few MLP-based models that demonstrate promising performance on validation sets and integrate them for final prediction. The results are shown in <b>Figure 6</b>, where we use MLP-ensemble to denote the ensemble model. Impressively, this model outperforms both the leading individual MLP-based methods and MPNN-based models. The performance boost is particularly noticeable on FB15K-237 and <a href="https://paperswithcode.com/dataset/nell-995">NELL-995</a>. This finding also underlines the non-essential nature of the MP component for KGC. Furthermore, it hints at the complementary roles of scoring and loss functions.
-  </p>
-
-  <div class="news-figure">
-    <img class="single"
-      src="/news/media/rethinking_gnns/image3.png"
-      alt="Figure 6" />
-    <div class="caption"><b>Figure 6:</b> KGC results (%) of the ensembled MLP-based methods, which outperform the MPNN-based models.</div>  
-  </div>
-  <br/>
-  
   <p class="sub-section">
     <b>Conclusion</b>
   </p>
-
   <p>
-    In a surprising discovery, we found that MLP-based models achieve competitive performance compared with three well-regarded MPNN-based models - CompGCN, RGCN, and KBGAT - across an array of datasets. This outcome challenges the preconceived notion that MP operations common in GNNs are the critical component for high-performance of these models. Our results highlight the previously underappreciated roles played by both the scoring and loss functions in KGC. We observe that the proper combination of these two components varies considerably between datasets. These insights led us to propose an ensemble approach using MLP-based models. This approach not only outperforms MPNN-based ones in task performance, but also simplicity and scalability.  Our findings lay groundwork for future explorations in rethinking the role and design of GNN models in KGC applications.
+    SSL on graphs is still a nascent area, with many lines of exploration probing the best ways to learn
+    general-purpose representations for downstream graph tasks. We present a new line of work
+    demonstrating the value of using clustering and CVI-inspired loss functions to learn node
+    representations. In particular, our proposed method, CARL-G, showcases an exciting advance toward
+    accelerating and improving self-supervised graph representation learning. It is much faster (up to
+    1,500x) while comparably accurate. Additionally, our work inspires several future lines of work: Are
+    there CVIs or clustering methods which lead to better downstream representations? How does CARL-G
+    fare on very large graphs in minibatch settings? We hope to explore these questions in the future. In
+    the meantime, please check out our paper, code, or poster in person at KDD!
   </p>
 
 </div>
