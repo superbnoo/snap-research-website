@@ -38,11 +38,11 @@ const newsList = [
     title:
       "Accelerating Graph Self-Supervised Learning with Clustering",
     descriptionShort:
-      "We present surprising findings ...",
+      "We discuss our work accepted to KDD 2023, which shows that using clustering-inspired losses for graph self-supervised learning yields performant representations which significantly accelerating training speed.",
     description: "../news/detail/accelerating-graph-2023.html",
     metaTitle:
       "Accelerating Graph Self-Supervised Learning with Clustering",
-    metaDescription: "We present surprising findings ...",
+    metaDescription: "We discuss our work accepted to KDD 2023, which shows that using clustering-inspired losses for graph self-supervised learning yields performant representations which significantly accelerating training speed.",
   },
   {
     id: 3,
@@ -53,11 +53,11 @@ const newsList = [
     title:
       "Accelerating Link Prediction Inference with Knowledge Distillation",
     descriptionShort:
-      "We present surprising findings ...",
+      "We show how to leverage relational distillation to train MLP models which can in many cases match or even outperform GNNs on link prediction tasks, in our work at ICML 2023.",
     description: "../news/detail/accelerating-link-2023.html",
     metaTitle:
       "Accelerating Link Prediction Inference with Knowledge Distillation",
-    metaDescription: "We present surprising findings ...",
+    metaDescription: "We show how to leverage relational distillation to train MLP models which can in many cases match or even outperform GNNs on link prediction tasks, in our work at ICML 2023.",
   }
 ];
 
