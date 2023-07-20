@@ -1,21 +1,23 @@
 <div class="container content">
   <p>
     Graph representation learning is a powerful tool with applications in a broad array of fields, including
-    social network analysis, molecular structure characterization, recommender systems, and more.
+    <a class="can-line-break" href="https://epubs.siam.org/doi/epdf/10.1137/1.9781611974973.37">social network analysis</a>, 
+    <a class="can-line-break" href="https://arxiv.org/abs/2207.04869">molecular structure characterization</a>, 
+    <a class="can-line-break" href="https://nshah.net/publications/FriendingEBR.SIGIR.23.pdf">recommender systems</a>, and more.
     There has recently been a focus on graph self-supervised learning (SSL), which enables learning node
     representations without labels which are often difficult to obtain in real-world scenarios. However,
-    most of these suffer from one or more key limitations, including expensive negative sampling steps,
-    complex architectures, and/or dataset-specific augmentations.
+    most of these suffer from one or more <a href="https://arxiv.org/pdf/2211.14394.pdf">key limitations</a>, including expensive <a href="https://arxiv.org/abs/2006.04131">negative sampling steps</a>,
+    <a href="https://arxiv.org/abs/2112.02472">complex architectures</a>, and/or <a href="https://arxiv.org/abs/2102.06514">dataset-specific augmentations</a>.
   </p>
   <p>
-    In our recent work, titled “CARL-G: Clustering-Accelerated Representation Learning on Graphs,” we
+    In our recent work, titled <a class="can-line-break" href="https://arxiv.org/abs/2306.06936">“CARL-G: <strong>C</strong>lustering-<strong>A</strong>ccelerated <strong>R</strong>epresentation <strong>L</strong>earning on <strong>G</strong>raphs</a>,” we
     propose a novel graph representation learning method, CARL-G, that circumvents many of the above
-    problems. This paper will appear at KDD ‘23, a top conference in data mining. Our results
+    problems. This paper will appear at <a href="https://kdd.org/kdd2023/">KDD ‘23</a>, a top conference in data mining. Our results
     demonstrate that, when matched with the optimal clustering method and clustering-based loss
     function, CARL-G consistently outperforms alternatives. Specifically, it surpasses downstream node
-    classification standards in 4/5 benchmark datasets while accelerating training by up to 79 times
+    classification standards in <strong>4/5</strong> benchmark datasets while accelerating training by up to <strong>79</strong> times
     compared to the top-performing baseline. It is also on par with baselines in node clustering and
-    similarity search tasks but is a whopping 1,500 times quicker in training than the top-performing (and
+    similarity search tasks but is a whopping <strong>1,500</strong> times quicker in training than the top-performing (and
     slowest) baseline.
   </p>
   <br/>
@@ -24,19 +26,19 @@
     <b>Cluster Validation Indices</b>
   </p>
   <p>
-    The core idea behind CARL-G is that contrastive learning (a recent advance in representation learning
+    The core idea behind CARL-G is that <a href="https://en.wikipedia.org/wiki/Self-supervised_learning#Types">contrastive learning</a> (a recent advance in representation learning
     that has revolutionized how we learn representations without labels) often performs a similar task to
     clustering. Contrastive learning and clustering both pull positive samples closer together and push
     negative samples apart. However, contrastive learning has only become popular relatively recently,
-    while clustering has had a long history, which has led to many developments, creating rich
+    while clustering has had a <a href="https://en.wikipedia.org/wiki/Cluster_analysis">long history</a>, which has led to many developments, creating rich
     opportunities for transfer between the lines of work.
   </p>
 
   <p>
-    One example of this is the well-studied class of Clustering Validation Indices (CVIs), which are
+    One example of this is the <a href="https://www.sciencedirect.com/science/article/abs/pii/S003132031200338X">well-studied</a> class of Clustering Validation Indices (CVIs), which are
     unsupervised estimators of cluster quality. These typically compare a ratio of intra-cluster to inter-
     cluster distance with the intuition that samples within the same cluster should be closer together, and
-    those in different clusters should be further apart. A popular example of a CVI is the Silhouette score.
+    those in different clusters should be further apart. A popular example of a CVI is the <a href="https://en.wikipedia.org/wiki/Silhouette_(clustering)">Silhouette score</a>.
   </p>
   <br/>
 
@@ -75,21 +77,21 @@
       algorithm and loss function(CVI) are flexible.</div>  
   </div>
   <p>
-    The input to CARL-G is a graph G with features for each node, represented by the feature matrix X. Our
-    method aims to produce a set of embeddings H that can be used for various downstream tasks, like
+    The input to CARL-G is a graph <strong>G</strong> with features for each node, represented by the feature matrix <strong>X</strong>. Our
+    method aims to produce a set of embeddings <strong>H</strong> that can be used for various downstream tasks, like
     node clustering, similarity search, or node classification.
   </p>
   <p>
-    As shown above in Figure 1, CARL-G consists of four steps:
+    As shown above in <strong>Figure 1</strong>, CARL-G consists of four steps:
   </p>
   <ol>
-    <li>Compute the embeddings H of the graph G using a GNN encoder.</li>
-    <li>Compute the task-specific embeddings Z using an MLP encoder.</li>
-    <li>Perform clustering (e.g., k-means) on Z to obtain a clustering C.</li>
+    <li>Compute the embeddings <strong>H</strong> of the graph <strong>G</strong> using a GNN encoder.</li>
+    <li>Compute the task-specific embeddings <strong>Z</strong> using an MLP encoder.</li>
+    <li>Perform clustering (e.g., k-means) on <strong>Z</strong> to obtain a clustering <strong>C</strong>.</li>
     <li>Backpropagate using CVI-based loss (e.g., silhouette).</li>
   </ol>
   <p>
-    Once trained, we use H (the embeddings produced by the GNN encoder) for downstream tasks. It is
+    Once trained, we use <strong>H</strong> (the embeddings produced by the GNN encoder) for downstream tasks. It is
     worth noting that this framework works with different clustering methods and different CVIs. It is
     especially flexible as it allows for non-differentiable clustering methods (since no gradients flow
     through the clustering step).
@@ -112,8 +114,8 @@
   <p>
     Following existing work in the area, we evaluate CARL-G on three tasks: node classification, node
     clustering, and node similarity search. CARL-G outperforms the baselines on 4/5 datasets in node
-    classification and is comparable with AF-GRL, the best-performing baseline in the node clustering and
-    similarity search tasks. Below, in Figure 2, we show a table of CARL-G’s strong node classification
+    classification and is comparable with <a href="https://arxiv.org/abs/2112.02472">AF-GRL</a>, the best-performing baseline in the node clustering and
+    similarity search tasks. Below, in <strong>Figure 2</strong>, we show a table of CARL-G’s strong node classification
     performance relative to other methods.
   </p>
 
@@ -127,9 +129,9 @@
 
   <p>
     However, the key advantage of CARL-G lies in its large efficiency improvements over existing methods.
-    In FIgure 3, we show CARL-G’s training time and GPU memory usage compared to other baseline
-    methods. We can see that CARL-G is much more efficient than the baselines when using VRC (Variance
-    Ratio Criterion) or simplified silhouette. These experiments are conducted on standard graph
+    In <strong>Figure 3</strong>, we show CARL-G’s training time and GPU memory usage compared to other baseline
+    methods. We can see that CARL-G is much more efficient than the baselines when using <a href="https://www.tandfonline.com/doi/abs/10.1080/03610927408827101">VRC</a> (Variance
+    Ratio Criterion) or <a href="https://en.wikipedia.org/wiki/Silhouette_(clustering)#Simplified_Silhouette_and_Medoid_Silhouette">simplified silhouette</a>. These experiments are conducted on standard graph
     benchmark datasets in the full-batch setting, and we plan to run experiments on larger-scale datasets
     in the future. Please refer to our paper for more details.
   </p>
@@ -161,7 +163,7 @@
     1,500x) while comparably accurate. Additionally, our work inspires several future lines of work: Are
     there CVIs or clustering methods which lead to better downstream representations? How does CARL-G
     fare on very large graphs in minibatch settings? We hope to explore these questions in the future. In
-    the meantime, please check out our paper, code, or poster in person at KDD!
+    the meantime, please check out our <a href="https://arxiv.org/abs/2306.06936">paper</a>, <a href="https://github.com/willshiao/carl-g">code</a>, or poster in person at KDD!
   </p>
 
 </div>
