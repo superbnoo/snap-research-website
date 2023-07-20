@@ -1,0 +1,144 @@
+<div class="container content">
+  <p>
+    Link prediction is a critical problem with diverse practical applications, including knowledge
+    graph completion, social platform friend recommendations, and item recommendations on
+    service and commerce platforms. Graph Neural Networks (GNNs) have shown outstanding
+    performance in link prediction tasks. However, the practical deployment of GNNs is limited due to
+    the high latency caused by non-trivial neighborhood data dependencies. On the other hand,
+    Multilayer Perceptrons (MLPs) are known for their efficiency and widely adapted in industry, but
+    the lack of relational knowledge makes them less effective than GNNs.
+  </p>
+  <p>
+    In our work titled “Linkless Link Prediction via Relational Distillation,” accepted at ICML 2023,
+    we propose a novel approach that leverages cross-model distillation techniques from GNNs to
+    MLPs. This enables us to take advantage of the performance benefits of GNNs and the speed
+    benefits of MLPs for link prediction tasks. We began by exploring two direct distillation methods,
+    namely logit-based and representation-based matching. However, we observed that these
+    methods were ineffective for link prediction tasks, which we hypothesized was due to their
+    inability to capture relational knowledge which is critical to the link prediction task. To address
+    this limitation, we introduce a relational distillation framework called Linkless Link Prediction
+    (LLP), which focuses on matching the relationships between each node and other nodes in the
+    graph.
+  </p>
+  <br/>
+
+  <p class="sub-section">
+    <b>Does Message Passing Really Help KGC?</b>
+  </p>
+  <p>
+    In our investigation of MPNN-based KGC models we concentrated on three key components (see <strong>Figure 1</strong>): message passing, scoring functions, and loss functions. Until now, the key contributor to the performance of MPNN-based KGC models has been elusive. Conventional wisdom often credits MP as the primary contributor, prompting our line of questioning: <em>Does message passing really help KGC?</em> To this end, we replaced the MP module with an MLP for multiple popular MPNN models (including <a href="https://arxiv.org/abs/1911.03082">CompGCN</a>, <a href="https://arxiv.org/abs/1703.06103">RGCN</a>, and <a href="https://aclanthology.org/P19-1466.pdf">KBGAT</a>), holding other architectural details constant for fairness.
+  </p>
+  
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/rethinking_gnns/image4.png"
+      alt="Figure 1" />
+    <div class="caption"><b>Figure 1:</b> A general MPNN framework for KGC. It has three main components: message passing, scoring function, and loss function.</div>  
+  </div>
+
+  <p>
+    <b>Figure 2</b> presents our findings on the popular <a href="https://huggingface.co/datasets/KGraph/FB15k-237">FB15K-237</a> dataset: notably, MLP-based counterparts achieve comparable performance to each respective MPNN-based model (see our <a href="https://arxiv.org/pdf/2205.10652.pdf">paper</a> for similar findings on other datasets), implying the limited value of MP.
+  </p>
+
+  <div class="news-figure">
+    <div class="multiple-img">
+      <img class="three"
+      src="/news/media/rethinking_gnns/image5.png"
+      alt="Figure 2" />
+      <img class="three"
+      src="/news/media/rethinking_gnns/image6.png"
+      alt="Figure 2" />
+      <img class="three"
+      src="/news/media/rethinking_gnns/image7.png"
+      alt="Figure 2" />
+    </div>
+
+    <div class="caption"><b>Figure 2:</b> KGC results (%) of CompGCN/CompGCN-MLP, RGCN/RGCN-MLP, and KBGAT/KBGAT-MLP on FB15K-237. CompGCN-MLP, RGCN-MLP, and KBGAT-MLP are the MLP counterparts of CompGCN, RGCN, and KBGAT respectively, by replacing their MP process.  The MLP counterparts achieve compare performance as the corresponding MPNN models</div>  
+  </div>
+  
+  <p>
+    Unveiling the limited influence of MP naturally prompts the question: <em>What components are truly helpful in enhancing performance?</em> This leads us to investigate the remaining components of MPNN-based KGC models: scoring and loss functions.
+  </p>
+  <br/>
+
+  <p class="sub-section">
+    <b>Scoring and Loss Functions in MPNN-based Models</b>
+  </p>
+
+  <p>
+    <b>Scoring Function</b>. In the original setting, CompGCN and KBGAT employ <a href="https://ojs.aaai.org/index.php/AAAI/article/download/11573/11432">ConvE</a> as their scoring function, while the RGCN uses <a href="https://arxiv.org/pdf/1412.6575.pdf">DistMult</a>. We expand our investigation to observe the performance of CompGCN and KBGAT with DistMult and RGCN with ConvE. All other settings are fixed during this investigation.
+  </p>
+
+  <p>
+    <b>Figure 3</b> presents several intriguing insights: Firstly, it’s evident that CompGCN, RGCN, and KBGAT’s performance fluctuates under different scoring functions. This demonstrates that the choice of scoring function strongly influences the performance in a dataset-dependent manner. Secondly, a performance disparity still exists between CompGCN (or KBGAT) and RGCN on FB15K-237, even when they utilize the same scoring function (either DistMult or ConvE). This suggests that the scoring function is influential but not the sole factor impacting the model performance.
+  </p>
+
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/rethinking_gnns/image2.png"
+      alt="Figure 3" />
+    <div class="caption"><b>Figure 3:</b> KGC results (%) with various scoring functions. Models behave differently with different scoring functions.</div>  
+  </div>
+
+  <p>
+    <b>Loss Function</b>. CompGCN, RGCN, and KBGAT all adopt the <a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html">BCE loss</a>. One major difference however is in the number of negative samples used in training. While CompGCN and KBGAT utilize all negative samples for each positive sample, RGCN only randomly selects 10. As such, we investigate the impact that varying the number of negatives per positive sample has on the performance.
+  </p>
+
+  <p>
+    Results are presented in <b>Figure 4</b>, where “w/o” denotes utilizing all negative samples, and N is the number of entities in KG. The results indicate that the quantity of negative samples plays a critical role in model performance, concurring with <a href="https://arxiv.org/pdf/2005.09863.pdf">prior work</a>. Increasing the number of negative samples generally improves performance. However, utilizing all negative samples isn’t a prerequisite for achieving superior results. This is noteworthy as employing all negative samples incurs higher computational costs. Hence, a thoughtful selection of the number of negative samples, tailored to each model and dataset, is important.
+  </p>
+
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/rethinking_gnns/image8.png"
+      alt="Figure 4" />
+    <div class="caption"><b>Figure 4:</b> KGC results (%) with varying numbers of negative samples in the loss function. The loss function significantly impacts model performance. Furthermore, utilizing 10 negative samples is not enough. For different datasets and methods, the optimal number of negative samples varies.</div>  
+  </div>
+  <br/>
+
+  <p class="sub-section">
+    <b>MLPs with Various Scoring and Loss Functions</b>
+  </p>
+
+  <p>
+    Drawing on our previous analysis, we questioned the necessity of MP in KGC.  A negative finding encouraged us to explore the potential of creating efficient MLP-based methods for KGC, which, suggests promise, given that MLP-based methods enjoy superior efficiency during both <a href="https://arxiv.org/pdf/2210.00102.pdf">training</a> and <a href="https://arxiv.org/pdf/2110.08727.pdf">inference</a> phases, owing to the absence of MP operations. Similar to the MPNN models, we first study the impact of the scoring and loss function in MLP models.
+  </p>
+
+  <p>
+    Our findings, presented in <b>Figure 5</b>, further underline the non-essential role of MP in KGC. Our MLP-based models can achieve comparable or even stronger performance than MPNN models. We also note the continued significant influence of (dataset dependent) scoring and loss functions on MLP-based KGC model performance. This variability implies that the influence of the scoring and loss functions, especially the negative sampling strategy, differs across datasets.
+  </p>
+
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/rethinking_gnns/image1.png"
+      alt="Figure 5" />
+    <div class="caption"><b>Figure 5:</b> KGC results (%) of MLP-based methods with different combinations of scoring and loss functions. Both the scoring and loss functions impact the performance of MLP-based models.</div>  
+  </div>
+  <br/>
+
+  <p class="sub-section">
+    <b>Ensembling MLPs</b>
+  </p>
+
+  <p>
+    To account for this variation, we next explore ensembling these configurations to enhance performance. By doing so, models that utilize different combinations of scoring and loss functions can complement one another.  We select a few MLP-based models that demonstrate promising performance on validation sets and integrate them for final prediction. The results are shown in <b>Figure 6</b>, where we use MLP-ensemble to denote the ensemble model. Impressively, this model outperforms both the leading individual MLP-based methods and MPNN-based models. The performance boost is particularly noticeable on FB15K-237 and <a href="https://paperswithcode.com/dataset/nell-995">NELL-995</a>. This finding also underlines the non-essential nature of the MP component for KGC. Furthermore, it hints at the complementary roles of scoring and loss functions.
+  </p>
+
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/rethinking_gnns/image3.png"
+      alt="Figure 6" />
+    <div class="caption"><b>Figure 6:</b> KGC results (%) of the ensembled MLP-based methods, which outperform the MPNN-based models.</div>  
+  </div>
+  <br/>
+  
+  <p class="sub-section">
+    <b>Conclusion</b>
+  </p>
+
+  <p>
+    In a surprising discovery, we found that MLP-based models achieve competitive performance compared with three well-regarded MPNN-based models - CompGCN, RGCN, and KBGAT - across an array of datasets. This outcome challenges the preconceived notion that MP operations common in GNNs are the critical component for high-performance of these models. Our results highlight the previously underappreciated roles played by both the scoring and loss functions in KGC. We observe that the proper combination of these two components varies considerably between datasets. These insights led us to propose an ensemble approach using MLP-based models. This approach not only outperforms MPNN-based ones in task performance, but also simplicity and scalability.  Our findings lay groundwork for future explorations in rethinking the role and design of GNN models in KGC applications.
+  </p>
+
+</div>
+</div>

@@ -28,6 +28,36 @@ const newsList = [
     metaTitle:
       "Rethinking the role of Graph Neural Networks in Knowledge Graph Completion",
     metaDescription: "We present surprising findings at ACL 2023, exploring previously misunderstood limitations of graph neural networks on knowledge graph completion tasks.",
+  },
+  {
+    id: 2,
+    date: "July 20, 2023",
+    link: "../news.html",
+    slug: "accelerating-graph-2023",
+    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>, co-authored with <a href=\"https://shiao.me/\">William Shiao</a>, <a href=\"https://scholar.google.com/citations?user=oQRhhVQAAAAJ&amp;hl=en\">Uday Singh</a>, <br/><a href=\"https://tzhao.io/\">Tong Zhao</a>, <a href=\"https://scholar.google.com/citations?user=i3U2JjEAAAAJ&amp;hl=en\">Yozen Liu</a> and <a href=\"https://www.cs.ucr.edu/~epapalex/\">Vagelis Papalexakis</a>",
+    title:
+      "Accelerating Graph Self-Supervised Learning with Clustering",
+    descriptionShort:
+      "We present surprising findings ...",
+    description: "../news/detail/accelerating-graph-2023.html",
+    metaTitle:
+      "Accelerating Graph Self-Supervised Learning with Clustering",
+    metaDescription: "We present surprising findings ...",
+  },
+  {
+    id: 3,
+    date: "July 20, 2023",
+    link: "../news.html",
+    slug: "accelerating-link-2023",
+    postedBy: "posted by <a href=\"https://tzhao.io/\">Tong Zhao</a>, co-authored with <a href=\"https://zguo.io/\">Zhichun Guo</a>, <a href=\"https://shiao.me/\">William Shiao</a>, <br/><a href=\"https://shichangzh.github.io/\">Shichang Zhang</a>, <a href=\"https://scholar.google.com/citations?user=i3U2JjEAAAAJ&amp;hl=en\">Yozen Liu</a>, <a href=\"https://niteshchawla.nd.edu/bio/\">Nitesh V. Chawla</a> and <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
+    title:
+      "Accelerating Link Prediction Inference with Knowledge Distillation",
+    descriptionShort:
+      "We present surprising findings ...",
+    description: "../news/detail/accelerating-link-2023.html",
+    metaTitle:
+      "Accelerating Link Prediction Inference with Knowledge Distillation",
+    metaDescription: "We present surprising findings ...",
   }
 ];
 
