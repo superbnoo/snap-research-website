@@ -1704,6 +1704,13 @@ textarea {
   margin: auto;
 }
 
+.news-figure .single-half {
+  width: 60%;
+  display: block;
+  max-width: 900px;
+  margin: auto;
+}
+
 .multiple-img .two {
   width: 45%;
 }
