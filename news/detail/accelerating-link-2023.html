@@ -1,0 +1,147 @@
+<div class="container content">
+  <p>
+    <a href="https://arxiv.org/pdf/2306.10453.pdf">Link prediction</a> is a critical problem with diverse 
+    practical applications, including <a class="can-line-break" href="https://arxiv.org/pdf/1703.06103.pdf">knowledge
+    graph completion</a>, <a class="can-line-break" href="https://dl.acm.org/doi/pdf/10.1145/3488560.3498398">social platform friend recommendations</a>, 
+    and <a class="can-line-break" href="https://arxiv.org/pdf/2002.02126.pdf">item recommendations</a> on
+    service and commerce platforms. Graph Neural Networks (GNNs) have shown outstanding
+    performance in link prediction tasks. However, the practical deployment of GNNs is limited due to
+    the <a class="can-line-break" href="https://arxiv.org/pdf/2110.08727.pdf">high latency</a> caused by non-trivial neighborhood data dependencies. On the other hand,
+    Multilayer Perceptrons (MLPs) are known for their efficiency and widely adapted in industry, but
+    the lack of relational knowledge makes them <a class="can-line-break" href="https://arxiv.org/pdf/2106.04051.pdf">less effective</a> than GNNs.
+  </p>
+  <p>
+    In our work titled “<a class="can-line-break" href="https://arxiv.org/pdf/2210.05801.pdf">Linkless Link Prediction via Relational Distillation</a>,” 
+    accepted at <a class="can-line-break" href="https://icml.cc/">ICML 2023</a>,
+    we propose a novel approach that leverages cross-model distillation techniques from GNNs to
+    MLPs. This enables us to take advantage of the performance benefits of GNNs and the speed
+    benefits of MLPs for link prediction tasks. We began by exploring two direct distillation methods,
+    namely logit-based and representation-based matching. However, we observed that these
+    methods were ineffective for link prediction tasks, which we hypothesized was due to their
+    inability to capture relational knowledge which is critical to the link prediction task. To address
+    this limitation, we introduce a relational distillation framework called Linkless Link Prediction
+    (LLP), which focuses on matching the relationships between each node and other nodes in the
+    graph.
+  </p>
+  <p>
+    Through extensive experiments, we demonstrate that LLP consistently outperforms MLPs and the
+    two direct distillation methods in both transductive and production settings. Moreover, LLP
+    achieves comparable or superior performance to teacher GNNs on 7 out of 8 datasets in the
+    transductive setting. Particularly noteworthy is the performance of LLP on cold-start nodes, where
+    it surpasses teacher GNNs and standalone MLPs by an average of <strong>25.29</strong> and <strong>9.42</strong> on Hits@20,
+    respectively. Additionally, LLP exhibits significantly faster inference times compared to GNNs,
+    such as being approximately <strong>70.68x</strong> faster on the large-scale <a>Collab</a> dataset.
+  </p>
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/accelerating-link/Figure1.jpg"
+      alt="Figure 1" />
+    <div class="caption"><b>Figure 1:</b> LLP framework. We use an encoder-decoder architecture for 
+      link prediction and start by exploring two direct distillation methods to distill knowledge 
+      from a <span style="color:#da954b">Teacher GNN</span> to a <span style="color:#3b679d">student MLP</span>. We further propose a <span style="color:#48752C">relational distillation framework, LLP, 
+      with two relational matching objectives</span> to improve the effectiveness.</div>  
+  </div>
+  <br/>
+
+  <p class="sub-section">
+    <b>Direct Distillation methods</b>
+  </p>
+  <p>
+    In this work, as illustrated in <strong>Figure 1</strong>, we adopt the commonly used encoder-decoder framework
+    for the link prediction task. The encoder learns node representations using GNNs or MLPs, and
+    the MLP decoder predicts link existence probabilities. Initially, we applied two direct knowledge
+    distillation methods: logit-matching and representation-matching (the gray arrows in <strong>Figure 1</strong>). In
+    the logit-matching method, we generate the soft score for each candidate node pair with the
+    teacher GNN model, and train the student to match the teacher’s prediction on each candidate.
+    For the representation-matching, we align the student’s learned latent node embedding space
+    with the teacher’s. However, empirical observations revealed that neither method was capable of
+    distilling sufficient knowledge for the student model to perform well in link prediction tasks. We
+    hypothesize that link prediction, unlike node classification, heavily relies on relational graph
+    topological information, which is not effectively captured by direct distillation methods.
+  </p>
+  <br/>
+
+  <p class="sub-section">
+    <b>Relational Distillation Methods (LLP)</b>
+  </p>
+
+  <p>
+    In accordance with our intuition regarding preservation of relational knowledge, we propose LLP,
+    a relational distillation framework. Instead of focusing on matching individual node pair scores or
+    node representations, LLP focuses on distilling knowledge about the relationships of each node
+    (e.g., node 4 in <strong>Figure 1</strong>) to other nodes (referred as context nodes, e.g., nodes 1, 2, 5, 6 in 
+    <strong>Figure 1</strong>) in the graph. We propose two relational matching objectives to achieve this goal: rank-based
+    matching and distribution-based matching. The key components of LLP are introduced as follows:
+  </p>
+  <ul>
+    <li>
+      <strong>Context Nodes Sampling:</strong> For each anchor node, LLP samples some nearby nodes by
+      repeating fixed-length random walks several times and randomly samples another few
+      nodes from the whole graph to serve as the context nodes.
+    </li>
+    <li>
+      <strong>Rank-based Matching:</strong> LLP utilizes the ranking of the context nodes w.r.t. the anchor
+      node induced by the teacher to teach the student.
+    </li>
+    <li>
+      <strong>Distribution-based Matching:</strong> LLP uses the KL divergence between the teacher
+      predictions and student predictions, centered on each anchor node to train the student.
+    </li>
+  </ul>
+
+  <br/>
+
+  <p class="sub-section">
+    <b>Effectiveness of LLP</b>
+  </p>
+  <p>
+    We evaluated LLP under various settings, including transductive, production (new nodes and
+    edges appear during testing), and cold-start (testing nodes appear without edges) scenarios. The
+    experimental results demonstrate that LLP consistently outperforms MLPs and the two direct
+    distillation methods. Notably, as <strong>Table 2</strong> shown, LLP achieves superior performance compared to
+    the teacher GNN model on 7 out of 8 datasets in the transductive setting.
+  </p>
+  <div class="news-figure">
+    <img class="single"
+      src="/news/media/accelerating-link/Figure2.png"
+      alt="Figure 1" />
+    <div class="caption"><b>Table 2:</b> Link prediction performances under transductive setting. Best 
+      and second-best performances are marked with bold and underlined, respectively.</div>  
+  </div>
+  <br/>
+
+  <p class="sub-section">
+    <b>Efficiency of LLP</b>
+  </p>
+  <p>
+    <strong>Figure 3</strong> shows that LLP not only improves performance but also offers significant speed
+    improvements compared to GNNs and other inference acceleration methods. The experimental
+    results show the efficiency gains achieved by LLP, reinforcing its practical applicability for large-
+    scale link prediction tasks.
+  </p>
+  <div class="news-figure">
+    <img class="single-half"
+      src="/news/media/accelerating-link/Figure3.png"
+      alt="Figure 1" />
+    <div class="caption"><b>Figure 3:</b> Inference time and prediction performance comparison of LLP with GNN and GNN
+      inference acceleration methods on Collab dataset.</div>
+  </div>
+  <br/>
+
+  <p class="sub-section">
+    <b>Conclusion</b>
+  </p>
+
+  <p>
+    In this work, we address challenges related to deploying GNNs for link prediction at scale. By
+    exploring cross-model distillation techniques from GNNs to MLPs, we introduce LLP as a novel
+    framework that combines the strengths of both models. Our experiments demonstrated the
+    effectiveness and efficiency of LLP in various settings. With LLP, we achieve improved
+    performances as well as faster inference times, making it a promising solution for large-scale link
+    prediction tasks that require both accuracy and efficiency. Our work provides valuable insights
+    into developing effective knowledge distillation frameworks for GNNs and also serves as a new
+    perspective for effective, efficient, and scalable link prediction.
+  </p>
+
+</div>
+</div>
