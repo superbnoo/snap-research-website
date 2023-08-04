@@ -73,6 +73,21 @@ const newsList = [
     metaTitle:
       "Semi-Supervised Graph Imbalanced Regression",
     metaDescription: "\"We propose a framework to tackle imbalanced graph regression problems using self-training and data augmentation, presented at KDD 2023.\" for the Semi-Supervised Graph Imbalanced Regression one.",
+  },
+  {
+    id: 5,
+    date: "August 4, 2023",
+    link: "../news.html",
+    slug: "snap-kdd-2023",
+    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
+    title:
+      "Snap Research at KDD 2023",
+    descriptionShort:
+      "\"We overview our contributions and presence at KDD 2023, spanning multiple accepted papers, workshops, tutorials, invited talks and more.\" for the Snap Research at KDD 2023 one.",
+    description: "../news/detail/snap-kdd-2023.html",
+    metaTitle:
+      "Snap Research at KDD 2023",
+    metaDescription: "\"We overview our contributions and presence at KDD 2023, spanning multiple accepted papers, workshops, tutorials, invited talks and more.\" for the Snap Research at KDD 2023 one.",
   }
 ];
 
