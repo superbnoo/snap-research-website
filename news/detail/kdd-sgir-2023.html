@@ -4,8 +4,8 @@
   </p>
   <p>
     From molecules to social networks, graphs are ubiquitous in our daily lives, playing crucial roles
-    in various applications. For example, users in a social network can be represented by their <a href="https://faculty.ucr.edu/~hanneman/nettext/C9_Ego_networks.html">ego-
-    nets</a>, molecules can be represented by <a href="https://en.wikipedia.org/wiki/Molecular_graph">graphs of atoms and bonds</a>, sentences can be
+    in various applications. For example, users in a social network can be represented by their <a href="https://faculty.ucr.edu/~hanneman/nettext/C9_Ego_networks.html">ego-nets</a>, 
+    molecules can be represented by <a href="https://en.wikipedia.org/wiki/Molecular_graph">graphs of atoms and bonds</a>, sentences can be
     represented by their <a href="https://www3.nd.edu/~dchiang/teaching/nlp/2018/slides/graph-grammars.pdf">semantic graphs</a>, etc. To better learn from graph data, graph neural
     networks (<a href="https://en.wikipedia.org/wiki/Graph_neural_network">GNNs</a>) have been developed and are commonly used for graph property prediction
     tasks, such as <a href="https://paperswithcode.com/task/graph-classification">graph classification</a>, in which we seek to map individual graphs to one or more
@@ -32,7 +32,7 @@
     regression methods.
   </p>
   <div class="news-figure">
-    <img class="single"
+    <img class="single-80"
       src="/news/media/kdd-sgir-2023/figure1.png"
       alt="Figure 1" />
     <div class="caption"><b>Figure 1</b>: Imbalanced data distribution on six different graph regression 
@@ -115,15 +115,15 @@
     In practical applications, we noticed that even with the reverse sampling described above, the
     label imbalance issue usually still cannot be fully resolved, as illustrated in the upper-middle plot
     in Figure 2. The reasons are twofold: (i) the unlabeled data is similarly imbalanced as the labeled
-    training data, such that we may not have enough high-confidence pseudo-labels for the under-
-    represented label ranges; (ii) the original model trained with imbalanced data is more likely to be
+    training data, such that we may not have enough high-confidence pseudo-labels for the under-represented 
+    label ranges; (ii) the original model trained with imbalanced data is more likely to be
     biased towards the majority label ranges, such that it struggles to give high confidence
     predictions on the under-represented label ranges due to inherent bias in the raw data. Both of
-    these reasons would lead to insufficient samples with high confidence predictions in the under-
-    represented label ranges. Therefore, we utilize a label-anchored Mixup algorithm to further
+    these reasons would lead to insufficient samples with high confidence predictions in the under-represented 
+    label ranges. Therefore, we utilize a label-anchored Mixup algorithm to further
     balance the training data via augmentation. Mixup is a common data augmentation technique to
-    generate new labeled training examples by interpolating pairs of existing ones. With our label-
-    anchored Mixup, we target the under-represented label ranges and compensate for the label
+    generate new labeled training examples by interpolating pairs of existing ones. With our 
+    label-anchored Mixup, we target the under-represented label ranges and compensate for the label
     imbalance, as illustrated in the right-most column in Figure 2.
   </p>
   <br/>
@@ -133,11 +133,7 @@
   </p>
 
   <p>
-    We evaluated our approach on public benchmark datasets, which are mainly from the molecular
-    and image domains. Figure 3 shows the overall performance of different methods in different
-    label regions, where many-shot, med.-shot, and few-shot indicate the purple, yellow, and red
-    regions in Figure 1, respectively. From Figure 3 we can observe that our proposed SGIR
-    consistently outperforms alternatives across datasets.
+    We evaluated our approach on public benchmark datasets, which are mainly from the molecular and image domains. Figure 3 shows the molecular property prediction performance on three benchmarks in terms of mean absolute error (MAE) and geometric mean (GM) in different label regions, where many-shot, med.-shot, and few-shot indicate the purple, yellow, and red regions in Figure 1, respectively. Compared with other imbalanced regression and semi-supervised graph learning baselines, our proposed SGIR consistently achieves best performances across datasets as it's able to enrich and balance the training data with confidently predicted pseudo-labels and augmentation. Additionally, the improvements from SGIR in the under-represented label ranges are achieved without sacrificing the performance in the well-represented label ranges.
   </p>
 
   <div class="news-figure">
@@ -145,7 +141,7 @@
       src="/news/media/kdd-sgir-2023/figure3.png"
       alt="Figure 3" />
     <div class="caption"><b>Figure 3</b>: Graph regression performances on molecule datasets, with 
-      best performance bolded.</div>  
+      best performances bolded.</div>  
   </div>
   <br/>
 
@@ -154,11 +150,7 @@
   </p>
 
   <p>
-    Our work explored graph imbalanced regression tasks and improved semi-supervised learning
-    for this area. We introduced a self-training framework that gradually reduced model bias caused
-    by data imbalance through multiple iterations. Extensive experiments demonstrated the
-    effectiveness and reasonable design of the proposed framework. Please refer to our <a href="https://arxiv.org/pdf/2305.12087.pdf">paper</a> for
-    more details.
+    Our work explored graph imbalanced regression tasks and improved semi-supervised learning for this area. We introduced a self-training framework SGIR that gradually reduced model bias caused by data imbalance through reverse sampling and augmentation. Extensive experiments demonstrated the effectiveness of SGIR on improving the performance on under-represented label ranges without sacrificing that of the well-represented label ranges.. Please refer to our <a href="https://arxiv.org/pdf/2305.12087.pdf">paper</a> for more details.
   </p>
 
 </div>
