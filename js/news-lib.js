@@ -58,6 +58,36 @@ const newsList = [
     metaTitle:
       "Accelerating Link Prediction Inference with Knowledge Distillation",
     metaDescription: "We show how to leverage relational distillation to train MLP models which can in many cases match or even outperform GNNs on link prediction tasks, in our work at ICML 2023.",
+  },
+  {
+    id: 4,
+    date: "August 3, 2023",
+    link: "../news.html",
+    slug: "kdd-sgir-2023",
+    postedBy: "posted by <a href=\"https://tzhao.io/\">Tong Zhao</a>, co-authored with <a href=\"https://liugangcode.github.io/\">Gang Liu</a>, <a href=\"https://www.linkedin.com/in/eric-inae-6056b1214/\">Eric Inae</a>, <br/><a href=\"https://engineering.nd.edu/faculty/tengfei-luo/\">Tengfei Luo</a> and <a href=\"http://www.meng-jiang.com/\">Meng Jiang</a>",
+    title:
+      "Semi-Supervised Graph Imbalanced Regression",
+    descriptionShort:
+      "We propose a framework to tackle imbalanced graph regression problems using self-training and data augmentation, presented at KDD 2023.",
+    description: "../news/detail/kdd-sgir-2023.html",
+    metaTitle:
+      "Semi-Supervised Graph Imbalanced Regression",
+    metaDescription: "We propose a framework to tackle imbalanced graph regression problems using self-training and data augmentation, presented at KDD 2023.",
+  },
+  {
+    id: 5,
+    date: "August 4, 2023",
+    link: "../news.html",
+    slug: "snap-kdd-2023",
+    postedBy: "posted by <a href=\"https://research.snap.com/team/team-member.html#neil-shah\">Neil Shah</a>",
+    title:
+      "Snap Research's Contributions at KDD 2023",
+    descriptionShort:
+      "We overview our contributions and presence at KDD 2023, spanning multiple accepted papers, workshops, tutorials, invited talks and more.",
+    description: "../news/detail/snap-kdd-2023.html",
+    metaTitle:
+      "Snap Research's Contributions at KDD 2023",
+    metaDescription: "We overview our contributions and presence at KDD 2023, spanning multiple accepted papers, workshops, tutorials, invited talks and more.",
   }
 ];
 
