@@ -366,11 +366,97 @@ const teamMembersList = [
     subTitle: "Principal Research Scientist",
     researchAreas: "Computer Vision, Machine Learning, Deep Learning",
     backUrl: "../team/category/creative-vision.html",
-    imageUrl: "../../img-for-members/Sergey_Tulyakov.webp",
+    imageUrl: "../../img-for-members/sergey-2023.webp",
     description: `
     <p>Sergey Tulyakov is a Principal Research Scientist heading the Creative Vision team at Snap Research. His work focuses on creating methods for manipulating the world via computer vision and machine learning. This includes style transfer, photorealistic object manipulation and animation, video synthesis, prediction and retargeting. His work has been published as 20+ top conference papers, journals and patents resulting in multiple tech transfers, including Snapchat Pet Tracking, OurBaby Snappable and Real-time Neural Lenses (gender swap, baby face) and others. Before joining Snap Inc., Sergey was with Carnegie Mellon University, Microsoft, NVIDIA. He holds a PhD degree from the University of Trento, Italy.</p>
     `,
   },
+
+  {
+    id: 307,
+    metaTitle: "",
+    metaDescription: `
+        `,
+    name: "Chaoyang Wang",
+    authorNames: ["Chaoyang Wang"],
+    email: "",
+    subTitle: "Research Scientist",
+    researchAreas: "Computer Vision, Machine Learning, Deep Learning",
+    backUrl: "../team/category/creative-vision.html",
+    imageUrl: "../../img-for-members/chaoyang.webp",
+    description: `
+    <p>Chaoyang is a Research Scientist in the Creative Vision team at Snap Research. He earned his Ph.D. degree from the Robotics Institute of Carnegie Mellon University in 2023, following his graduation from Shanghai Jiao Tong University in 2016. His primary research goal is to capture real-life dynamic moments in 3D using cameras and seamlessly integrate them into the virtual world.</p>
+    `,
+  },
+  {
+    id: 308,
+    metaTitle: "",
+    metaDescription: `
+        `,
+    name: "Ivan Skorokhodov",
+    authorNames: ["Ivan Skorokhodov"],
+    email: "",
+    subTitle: "Research Scientist",
+    researchAreas: "Computer Vision, Machine Learning, Deep Learning",
+    backUrl: "../team/category/creative-vision.html",
+    imageUrl: "../../img-for-members/ivan.webp",
+    description: `
+    <p>Ivan Skorokhodov is a Research Scientist in the Creative Vision team at Snap Research. He works on image, video, and 3D generative models, and neural rendering. Ivan earned his PhD in computer science from King Abdullah University of Science and Technology in 2023. Previously, he was focused on NLP and loss landscape analysis as a deep learning researcher at Moscow Institute of Physics and Technology, and worked as a software engineer at Yandex.</p>
+    `,
+  },
+
+  {
+    id: 309,
+    metaTitle: "",
+    metaDescription: `
+        `,
+    name: "Kfir Aberman",
+    authorNames: ["Kfir Aberman"],
+    email: "",
+    subTitle: "Lead Research Scientist",
+    researchAreas: "Computer Vision, Machine Learning, Deep Learning",
+    backUrl: "../team/category/creative-vision.html",
+    imageUrl: "../../img-for-members/kfir.webp",
+    description: `
+    <p>Kfir is a Research Scientist and team lead in the Creative Vision group at Snap Research. His primary research focus lies in Generative AI for visual content, with a core objective of synthesizing novel visual effects that are impactful and meaningful to people’s day to day. Before joining Snap, Kfir was a Research Scientist at Google. His research led to publications in top conferences and journals, where some of his contributions in the field of generative AI include noteworthy works such as Prompt-to-Prompt and DreamBooth. Kfir earned his Ph.D from Tel-Aviv University, Israel.</p>
+    `,
+  },
+
+  {
+    id: 310,
+    metaTitle: "",
+    metaDescription: `
+        `,
+    name: "Peiye Zhuang",
+    authorNames: ["Peiye Zhuang"],
+    email: "",
+    subTitle: "Research Scientist",
+    researchAreas: "Computer Vision, Machine Learning, Deep Learning",
+    backUrl: "../team/category/creative-vision.html",
+    imageUrl: "../../img-for-members/peiye.webp",
+    description: `
+    <p>Peiye Zhuang is a Research Scientist working in the Creative Vision group at Snap Research. She received her PhD degree in Computer Science at University of Illinois at Urbana-Champaign (UIUC) in 2023. Her research focuses on foundation generative models and various content creation applications, including 2D/3D/video generation and editing. Before joining Snap, Peiye spent one year at Stanford University as a Student with New Faculty. Peiye has interned with Google Brain, Apple, Facebook (now Meta), and Adobe.</p>
+    `,
+  },
+
+  {
+    id: 311,
+    metaTitle: "",
+    metaDescription: `
+        `,
+    name: "Yuwei Fang",
+    authorNames: ["Yuwei Fang"],
+    email: "",
+    subTitle: "Research Scientist",
+    researchAreas: "Computer Vision, Machine Learning, Deep Learning",
+    backUrl: "../team/category/creative-vision.html",
+    imageUrl: "../../img-for-members/yuwei.webp",
+    description: `
+    <p>Yuwei Fang is a Senior Research Scientist in the Creative Vision Group at Snap Research. Before joining Snap, he was a Senior Applied Scientist from Microsoft Azure AI. His research interests are in Multimodal AI and Natural language processing. He received his master degree from Peking University.</p>
+    `,
+  },
+
+
 ];
 
 const emailForContact = "someemail@snap.com";
@@ -384,7 +470,7 @@ teamMembersList.forEach((teamMember) => {
 const teamMembersForTeamCategory = {
   computationalImaging: [0, 1, 2, 3, 4, 5, 6],
   userModelingAndPersonalization: [102, 103, 104, 106, 107, 109, 110, 111, 105],
-  creativeVision: [300, 301, 302, 303, 304, 305, 306],
+  creativeVision: [300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311],
   admin: [],
 
   get all() {
