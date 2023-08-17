@@ -3083,16 +3083,12 @@ publicationsList.forEach((publication) => {
 
 publicationsList.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-function get5Latest25Papers() {
-  if (publicationsList.length < 25) return [];
+function getRandomKFromLatestMPapers(K, M) {
+  if (publicationsList.length < M) return [];
   
-  let numbers = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-    10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
-    20, 21, 22, 23, 24
-  ];
+  let numbers = [...Array(M).keys()];
   const shuffled = numbers.sort(() => 0.5 - Math.random());
-  const idx = shuffled.slice(0, 5).sort((a, b) => a - b);
+  const idx = shuffled.slice(0, K).sort((a, b) => a - b);
 
   return idx.map((i) => publicationsList[i].id);
 }

@@ -38,7 +38,7 @@
     }
   });
   $(function () {
-    const fiveIds = get5Latest25Papers();
+    const fiveIds = getRandomKFromLatestMPapers(5, 25);
     const mainPublications = getPublicationsByIDs(fiveIds, '', true); // [103,98,67,80,77]
     $('.home-publication-item-container').loadTemplate($("#home-publication-list-item"), mainPublications);
   });
